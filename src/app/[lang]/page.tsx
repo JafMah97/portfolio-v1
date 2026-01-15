@@ -16,6 +16,7 @@ export default async function HomePage({ params }: Props) {
       <LanguageSwitcher />
       <>
         <p>{dict.p}</p>
+        
       </>
     </div>
   );
