@@ -1,0 +1,21 @@
+{
+  "siteMeta": {
+    "siteName": "Jafar Mahmoud",
+    "home": {
+      "title": "{{siteName}} — Front-End Developer & Creative Engineer",
+      "description": "Beyond code, I build experiences. Explore a curated showcase of projects where performance meets polished design, and discover how we can build your next big idea together."
+    }
+  },
+  "navbar": {
+    "navLinks": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "blogs": "Blogs",
+      "contact": "Contact"
+    },
+    "theme": "Toggle Theme",
+    "setting": "Setting"
+  },
+  "p": "test"
+}
