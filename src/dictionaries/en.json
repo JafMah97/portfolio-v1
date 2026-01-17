@@ -17,5 +17,13 @@
     "theme": "Toggle Theme",
     "setting": "Setting"
   },
+  "HomePage":{
+    "title":"Hi I'm Jafar Mahmoud",
+    "subTitle":"Front-End Developer | UI/UX Enthusiast | Open Source Contributor",
+    "action":{
+      "contact":"Contact Me",
+      "projects":"View Projects"
+    }
+  },
   "p": "test"
 }

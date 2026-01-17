@@ -1,6 +1,8 @@
-import LanguageSwitcher from "@/components/switchers/language-switcher";
-import { ThemeSwitcher } from "@/components/switchers/theme-switcher";
-import { getDictionary, Lang } from "@/utils/translations/dictionary-utils";
+
+import Blogs from "@/components/website/home/Blogs";
+import Hero from "@/components/website/home/Hero";
+import Projects from "@/components/website/home/Projects";
+import {  Lang } from "@/utils/translations/dictionary-utils";
 
 interface Props {
   params: Promise<{ lang: Lang }>;
@@ -8,16 +10,12 @@ interface Props {
 
 export default async function HomePage({ params }: Props) {
   const { lang } = await params;
-  const dict = await getDictionary(lang);
-
+  
   return (
-    <div className="h-screen">
-      <ThemeSwitcher />
-      <LanguageSwitcher />
-      <>
-        <p>{dict.p}</p>
-        
-      </>
+    <div className="bg-primary/10">
+      <Hero lang={lang} />
+      <Projects lang={lang}/>
+      <Blogs lang={lang}/>
     </div>
   );
 }

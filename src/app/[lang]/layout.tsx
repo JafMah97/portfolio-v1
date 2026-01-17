@@ -10,6 +10,7 @@ import { TranslationsProvider } from "@/providers/translation-provider";
 import { arFont, enFont } from "@/lib/fonts";
 import { ThemeProvider } from "@/providers/theme-provider";
 import Navbar from "@/components/website/navbar/navbar";
+import Footer from "@/components/website/footer/Footer";
 
 export async function generateStaticParams() {
   return i18n.langs.map((lang: Lang) => ({ lang }));
@@ -61,6 +62,7 @@ export default async function RootLayout({
             />
             <Navbar />
             {children}
+            <Footer/>
           </ThemeProvider>
         </TranslationsProvider>
       </body>
