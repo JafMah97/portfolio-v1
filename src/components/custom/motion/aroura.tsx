@@ -117,7 +117,7 @@ type AuroraProps = {
 };
 
 export default function Aurora({
-  colorStops = ["#5227FF", "#5aa3f0", "#5227FF"],
+  colorStops = ["#5227FF", "#50aaff", "#5227FF"],
   amplitude = 1.0,
   blend = 0.5,
   time,
@@ -140,7 +140,6 @@ export default function Aurora({
       speed,
     };
   }, [colorStops, amplitude, blend, time, speed]);
-
 
   const ctnDom = useRef<HTMLDivElement | null>(null);
 
@@ -234,7 +233,7 @@ export default function Aurora({
 
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
-  }, [amplitude,blend,colorStops]);
+  }, [amplitude, blend, colorStops]);
 
   return <div ref={ctnDom} className="aurora-container" />;
 }

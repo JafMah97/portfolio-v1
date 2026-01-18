@@ -6,6 +6,8 @@ import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 import { blogs } from "@/content/blogs-data";
 import { Lang } from "@/utils/translations/dictionary-utils";
 import { TextShiny } from "@/components/custom/motion/text-shine";
+import CustomButton from "@/components/custom/layout/custom-button";
+import { Send, Sparkles } from "lucide-react";
 
 export default function Blogs({ lang }: { lang: Lang }) {
   return (
@@ -25,16 +27,18 @@ export default function Blogs({ lang }: { lang: Lang }) {
           as="div"
           fadeUp
           stagger={0.15}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 "
         >
           {blogs.map((blog, index) => (
             <MotionWrapper
-              as="article"
               key={index}
+              as="article"
               fadeUp
               delay={index * 0.1}
               className="group relative overflow-hidden rounded-2xl bg-linear-to-br from-white/80 to-white/20 dark:from-gray-800/80 dark:to-gray-800/20 backdrop-blur-sm border border-white/30 dark:border-gray-700/30 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 mb-8"
             >
+              <div className="absolute -inset-1 bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition duration-500 group-hover:duration-300 animate-pulse-slow" />
+
               <Link href={`/blogs/${blog.slug}`} className="block p-8">
                 {/* Gradient accent line */}
                 <div className="absolute top-0 left-0 w-2 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-l-2xl" />
@@ -76,9 +80,7 @@ export default function Blogs({ lang }: { lang: Lang }) {
 
                     {/* Read more indicator */}
                     <div className="flex items-center text-blue-600 dark:text-blue-400 font-medium group-hover:translate-x-2 transition-transform duration-300">
-                      <span className="mr-2 text-xs  ">
-                        Read more
-                      </span>
+                      <span className="mr-2 text-xs  ">Read more</span>
                       <FaArrowRight className="text-xs" />
                     </div>
                   </div>
@@ -94,12 +96,12 @@ export default function Blogs({ lang }: { lang: Lang }) {
 
         {/* CTA Button */}
         <MotionWrapper fadeUp delay={0.4} className="text-center mt-12">
-          <Link
+          <CustomButton
+            text="View All Posts"
             href="/blogs"
-            className="inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/80 transition-colors"
-          >
-            View All Posts
-          </Link>
+            iconLeft={<Send className="w-5 h-5" />}
+            iconRight={<Sparkles className="w-5 h-5" />}
+          />
         </MotionWrapper>
       </section>
     </div>

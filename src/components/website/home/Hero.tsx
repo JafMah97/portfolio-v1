@@ -6,6 +6,9 @@ import TextType from "@/components/custom/motion/text-type";
 import { AuroraSer } from "../../custom/motion/aroura";
 import { TextShiny } from "@/components/custom/motion/text-shine";
 import { getDictionary, Lang } from "@/utils/translations/dictionary-utils";
+import CustomButton from "@/components/custom/layout/custom-button";
+import { GoProjectRoadmap } from "react-icons/go";
+import { Phone, Sparkles } from "lucide-react";
 
 export default async function Hero({ lang }: { lang: Lang }) {
   const dictHero =  (await getDictionary(lang)).homePage.hero
@@ -51,7 +54,7 @@ export default async function Hero({ lang }: { lang: Lang }) {
             as="div"
             fadeUp
             delay={0.4}
-            className="text-xl md:text-2xl  mb-8"
+            className="text-xl md:text-2xl  mb-10 h-10 md:h-fit"
           >
             <TextType
               text={dictHero.subTitle}
@@ -106,13 +109,15 @@ export default async function Hero({ lang }: { lang: Lang }) {
               whileTap={{ scale: 0.95 }}
               className="w-full sm:w-auto"
             >
-              <Link
-                className=" bg-primary/10 block px-8 py-3 rounded-lg hover:bg-primary/20"
+              
+              <CustomButton
                 href={`/${lang}/contact`}
-                prefetch={false}
-              >
-                {dictHero.action.contact}
-              </Link>
+                text={dictHero.action.contact}
+                iconLeft={<Phone/>}
+                iconRight={<Sparkles />}
+                isOutlined
+
+              />
             </MotionWrapper>
             <MotionWrapper
               as="button"
@@ -120,13 +125,12 @@ export default async function Hero({ lang }: { lang: Lang }) {
               whileTap={{ scale: 0.95 }}
               className="w-full sm:w-auto"
             >
-              <Link
-                className="bg-primary block text-white px-8 py-3 rounded-lg hover:bg-primary/80 transition-colors"
+              <CustomButton
                 href={`/${lang}/projects`}
-                prefetch={false}
-              >
-                {dictHero.action.projects}
-              </Link>
+                text={dictHero.action.projects}
+                iconLeft={<GoProjectRoadmap />}
+                iconRight={<Sparkles />}
+              />
             </MotionWrapper>
           </MotionWrapper>
         </div>

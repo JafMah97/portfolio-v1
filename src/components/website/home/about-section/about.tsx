@@ -4,8 +4,9 @@ import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 import { TextShiny } from "@/components/custom/motion/text-shine";
 import Link from "next/link";
 
-import { Code2, Server, Wrench } from "lucide-react";
+import { Code2, Send, Server, Sparkles, Wrench } from "lucide-react";
 import SkillCard from "./skill-card";
+import CustomButton from "@/components/custom/layout/custom-button";
 
 export default function AboutSection() {
   return (
@@ -31,7 +32,7 @@ export default function AboutSection() {
         <MotionWrapper
           fadeUp
           as="h2"
-          className="text-5xl font-bold text-center mb-10 text-foreground"
+          className="text-4xl md:text-6xl font-bold  mb-6 text-center"
         >
           <TextShiny text="About Me" />
         </MotionWrapper>
@@ -87,12 +88,12 @@ export default function AboutSection() {
 
         {/* CTA Button */}
         <MotionWrapper fadeUp delay={0.6} className="text-center">
-          <Link
-            href="/about"
-            className="px-8 py-3 rounded-lg bg-primary text-white hover:bg-primary/80 transition-colors shadow-md hover:shadow-lg"
-          >
-            Learn More About Me
-          </Link>
+          <CustomButton
+            text="Learn More"
+            href="/blogs"
+            iconLeft={<Send className="w-5 h-5" />}
+            iconRight={<Sparkles className="w-5 h-5" />}
+          />
         </MotionWrapper>
       </div>
     </section>

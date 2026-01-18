@@ -3,16 +3,14 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className=" border-t h-16 bg-primary/20 ">
+    <footer className=" border-t bg-primary/30 ">
       <div className="container max-w-7xl mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center ">
           <div className="mb-4 md:mb-0 ">
             <Link href={"/"} className="text-xl font-bold text-primary ">
               Devfolio&trade;
             </Link>
-            <p className="text-sm text-foreground/60 mt-2">
-              &copy;{new Date().getFullYear()} Devfolio. All right Reserved.
-            </p>
+
           </div>
           <div className="flex space-x-6">
             <Link
