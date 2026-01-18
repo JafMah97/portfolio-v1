@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState, useCallback, useEffect, useRef } from "react";
 import {
   motion,
@@ -21,8 +21,6 @@ type ShinyTextProps = {
   direction?: "left" | "right";
   delay?: number;
 };
-
-
 
 const ShinyText = ({
   text = "",
@@ -134,10 +132,13 @@ const ShinyText = ({
 
 export default ShinyText;
 
-
-export const TextShiny = ({text}:{text:string}) => {
-  const theme = useTheme().theme
-  return (
-    <ShinyText text={text} color={theme === "light" ? "#000000" : "#ffffff"} />
-  )
-}
+export const TextShiny = ({ text }: { text: string }) => {
+  const theme = useTheme().theme;
+  const [color, setColor] = useState("#000000");
+  useEffect(() => {
+    setTimeout(() => {
+      setColor(theme === "light" ? "#000000" : "#ffffff");
+    }, 10);
+  }, [theme]);
+  return <ShinyText text={text} color={color} className="pb-6"/>;
+};

@@ -60,7 +60,7 @@ export default async function RootLayout({
                 className: `antialiased ${fontClass}`,
               }}
             />
-            <Navbar />
+            <Navbar lang={lang}/>
             {children}
             <Footer/>
           </ThemeProvider>

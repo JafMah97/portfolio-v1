@@ -45,7 +45,7 @@ export const projects: Project[] = [
   {
     title: "TheDeal",
     description:
-      "A blogging platform with user authentication and markdown support.",
+      "Is a freelance project I worked on with a senior developer, who gave me the opportunity to contribute and grow through real production experience. I built the Home page, Projects page, and Podcast page, focusing on clean UI, accessibility, and responsive design. The platform allows users to post job offers, apply for jobs, list projects for sale or scaling, and create role profiles to get hire",
     technologies: [
       "Next.js",
       "React",

@@ -1,4 +1,5 @@
 {
+  "siteName": "CodeJM",
   "siteMeta": {
     "siteName": "Jafar Mahmoud",
     "home": {
@@ -17,13 +18,17 @@
     "theme": "Toggle Theme",
     "setting": "Setting"
   },
-  "HomePage":{
-    "title":"Hi I'm Jafar Mahmoud",
-    "subTitle":"Front-End Developer | UI/UX Enthusiast | Open Source Contributor",
-    "action":{
-      "contact":"Contact Me",
-      "projects":"View Projects"
+  "homePage": {
+    "hero":{
+      "title": "Hi I'm Jafar Mahmoud",
+      "subTitle": "Front‑End Developer | Modern Web Experiences",
+      "imageAlt":"Jafar Mahmoud",
+      "action": {
+        "contact": "Contact Me",
+        "projects": "View Projects"
+      }
     }
+    
   },
   "p": "test"
 }

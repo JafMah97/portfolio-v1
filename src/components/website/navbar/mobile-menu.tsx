@@ -11,9 +11,10 @@ import MotionWrapper from "../../custom/motion/motion-wrapper";
 import PresenceWrapper from "../../custom/motion/presence-wrapper";
 import NavItem from "./nav-item";
 import { useTranslation } from "@/providers/translation-provider";
+import { Lang } from "@/utils/translations/dictionary-utils";
 
 
-export default function MobileMenu() {
+export default function MobileMenu({lang}:{lang:Lang}) {
   const { navLinks: dict, setting } = useTranslation().navbar;
 
   const [isOpen, setIsOpen] = useState(false);
@@ -22,11 +23,11 @@ export default function MobileMenu() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const menuItems = [
-    { href: "/", name: dict.home },
-    { href: "/about", name: dict.about },
-    { href: "/projects", name: dict.projects },
-    { href: "/blogs", name: dict.blogs },
-    { href: "/contact", name: dict.contact },
+    { href: `/${lang}`, name: dict.home },
+    { href: `/${lang}/about`, name: dict.about },
+    { href: `/${lang}/projects`, name: dict.projects },
+    { href: `/${lang}/blogs`, name: dict.blogs },
+    { href: `/${lang}/contact`, name: dict.contact },
   ];
 
   return (
@@ -74,6 +75,7 @@ export default function MobileMenu() {
                         className={`block py-2 hover:text-primary ${
                           isActive ? "text-primary" : "text-foreground/70 "
                         }`}
+                        prefetch={false}
                       >
                         <NavItem href={item.href}>{item.name}</NavItem>
                       </Link>

@@ -10,7 +10,7 @@ function Footer() {
             <Link href={"/"} className="text-xl font-bold text-primary ">
               Devfolio&trade;
             </Link>
-            <p className="text-sm text-secondary mt-2">
+            <p className="text-sm text-foreground/60 mt-2">
               &copy;{new Date().getFullYear()} Devfolio. All right Reserved.
             </p>
           </div>
@@ -28,7 +28,7 @@ function Footer() {
               <FaLinkedin />
             </Link>
             <Link
-              className="text-2xl hover:text-3xl text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300"
+              className="text-2xl hover:text-3xl text-gray-600 dark:text-gray-30z hover:text-primary transition-colors duration-300"
               href={"https://twitter.com/JafMah97"}
             >
               <FaTwitter />
