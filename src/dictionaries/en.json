@@ -20,12 +20,24 @@
   },
   "homePage": {
     "hero":{
-      "title": "Hi I'm Jafar Mahmoud",
+      "title": "Hi I'm Jafar ",
       "subTitle": "Front‑End Developer | Modern Web Experiences",
       "imageAlt":"Jafar Mahmoud",
       "action": {
         "contact": "Contact Me",
         "projects": "View Projects"
+      },
+      "social":{
+        "github":"GitHub",
+        "linkedIn":"LinkedIn",
+        "x":"X",
+        "email":"Email"
+      },
+      "stats":{
+        "years":"Years Experience",
+        "projects":"Projects",
+        "technologies":"Technologies",
+        "satisfaction":"Satisfaction"
       }
     }
     

@@ -1,16 +1,15 @@
 "use client";
 
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
-import { TextShiny } from "@/components/custom/motion/text-shine";
-import Link from "next/link";
 
 import { Code2, Send, Server, Sparkles, Wrench } from "lucide-react";
 import SkillCard from "./skill-card";
 import CustomButton from "@/components/custom/layout/custom-button";
+import ShinyText from "@/components/custom/motion/text-shine";
 
 export default function AboutSection() {
   return (
-    <section className="py-24 relative bg-primary/10 overflow-hidden">
+    <section className="py-24 relative bg-primary/10 overflow-hidden ">
       {/* Background Particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Stars */}
@@ -34,7 +33,7 @@ export default function AboutSection() {
           as="h2"
           className="text-4xl md:text-6xl font-bold  mb-6 text-center"
         >
-          <TextShiny text="About Me" />
+          <ShinyText text="About Me" />
         </MotionWrapper>
 
         {/* Description */}

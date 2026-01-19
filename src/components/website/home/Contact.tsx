@@ -1,7 +1,7 @@
 "use client";
 import CustomButton from "@/components/custom/layout/custom-button";
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
-import { TextShiny } from "@/components/custom/motion/text-shine";
+import ShinyText from "@/components/custom/motion/text-shine";
 import { Lang } from "@/utils/translations/dictionary-utils";
 import {
   Mail,
@@ -67,7 +67,7 @@ export default function Contact({ lang }: { lang: Lang }) {
             fadeUp
             className="text-4xl md:text-6xl font-bold  mb-6 text-center"
           >
-            <TextShiny text="Let's Connect" />
+            <ShinyText text="Let's Connect" />
           </MotionWrapper>
 
           <MotionWrapper

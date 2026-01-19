@@ -22,7 +22,7 @@ type ShinyTextProps = {
   delay?: number;
 };
 
-const ShinyText = ({
+const TextWithShin = ({
   text = "",
   disabled = false,
   speed = 2,
@@ -130,15 +130,18 @@ const ShinyText = ({
   );
 };
 
-export default ShinyText;
 
-export const TextShiny = ({ text }: { text: string }) => {
+
+export default function ShinyText  ({ text }: { text: string })  {
   const theme = useTheme().theme;
   const [color, setColor] = useState("#000000");
+  const [shineColor,setShineColor] = useState("#ffffff")
+  console.log(theme)
   useEffect(() => {
     setTimeout(() => {
       setColor(theme === "light" ? "#000000" : "#ffffff");
+      setShineColor(theme === "light"? "#ffffff":"#000000")
     }, 10);
   }, [theme]);
-  return <ShinyText text={text} color={color} className="pb-6"/>;
+  return <TextWithShin delay={3} shineColor={shineColor} text={text} color={color} className="pb-6"/>;
 };

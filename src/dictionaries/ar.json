@@ -20,12 +20,24 @@
   },
   "homePage": {
     "hero": {
-      "title": "مرحبًا، أنا جعفر محمود",
+      "title": "مرحبًا، أنا جعفر ",
       "subTitle": "مطور واجهات أمامية | تجارب ويب حديثة",
       "imageAlt": "جعفر محمود",
       "action": {
         "contact": "تواصل معي",
         "projects": "عرض المشاريع"
+      },
+      "social": {
+        "github": "جيتهاب",
+        "linkedIn": "لينكدإن",
+        "x": "إكس",
+        "email": "البريد"
+      },
+      "stats": {
+        "years": "سنوات خبرة",
+        "projects": "مشاريع",
+        "technologies": "تقنيات",
+        "satisfaction": "رضا العملاء"
       }
     }
   },

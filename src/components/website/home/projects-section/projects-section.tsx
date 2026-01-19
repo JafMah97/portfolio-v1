@@ -2,7 +2,7 @@
 import { projects } from "@/content/projects-data";
 import { Lang } from "@/utils/translations/dictionary-utils";
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
-import { TextShiny } from "@/components/custom/motion/text-shine";
+import  ShinyText  from "@/components/custom/motion/text-shine";
 
 import {
   Carousel,
@@ -25,7 +25,7 @@ export default function Projects({ lang }: { lang: Lang }) {
           fadeUp
           className="text-4xl md:text-6xl font-bold  mb-6 text-center"
         >
-          <TextShiny text="Featured Projects" />
+          <ShinyText text="Featured Projects" />
         </MotionWrapper>
         <div className=" px-15 py-10 rounded-4xl bg-primary/10">
           {/* Carousel */}

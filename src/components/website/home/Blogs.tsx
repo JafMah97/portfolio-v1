@@ -5,7 +5,7 @@ import { FaArrowRight, FaCalendar, FaClock } from "react-icons/fa";
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 import { blogs } from "@/content/blogs-data";
 import { Lang } from "@/utils/translations/dictionary-utils";
-import { TextShiny } from "@/components/custom/motion/text-shine";
+import ShinyText from "@/components/custom/motion/text-shine";
 import CustomButton from "@/components/custom/layout/custom-button";
 import { Send, Sparkles } from "lucide-react";
 
@@ -19,7 +19,7 @@ export default function Blogs({ lang }: { lang: Lang }) {
           fadeUp
           className="text-4xl md:text-6xl font-bold  mb-6 text-center"
         >
-          <TextShiny text="Latest Blogs" />
+          <ShinyText text="Latest Blogs" />
         </MotionWrapper>
 
         {/* Blog Grid */}

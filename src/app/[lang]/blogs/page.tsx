@@ -5,9 +5,9 @@ import { FaArrowRight, FaCalendar, FaClock } from "react-icons/fa";
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 import { blogs } from "@/content/blogs-data";
 import { Lang } from "@/utils/translations/dictionary-utils";
-import { TextShiny } from "@/components/custom/motion/text-shine";
 import CustomButton from "@/components/custom/layout/custom-button";
 import { Send, Sparkles } from "lucide-react";
+import ShinyText from "@/components/custom/motion/text-shine";
 
 export default function BlogsPage({ params }: { params: { lang: Lang } }) {
   const lang = params.lang;
@@ -21,7 +21,7 @@ export default function BlogsPage({ params }: { params: { lang: Lang } }) {
           fadeUp
           className="text-5xl md:text-7xl font-bold text-center mb-6"
         >
-          <TextShiny text="Blog Posts" />
+          <ShinyText text="Blog Posts" />
         </MotionWrapper>
 
         {/* Subtitle */}

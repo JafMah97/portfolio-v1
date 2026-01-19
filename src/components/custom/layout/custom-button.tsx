@@ -31,8 +31,8 @@ export default function CustomButton({
             hover:-translate-y-1
           `
             : `
-            bg-linear-to-r from-blue-600 to-purple-600 text-white 
-            hover:from-blue-700 hover:to-purple-700 
+            bg-primary text-white 
+            hoverbg-primary/80
             shadow-2xl hover:shadow-3xl hover:shadow-blue-500/30 
             hover:-translate-y-1
           `
@@ -41,26 +41,24 @@ export default function CustomButton({
     >
       {/* Glow (only for filled variant) */}
       {!isOutlined && (
-        <div className="absolute -inset-1 bg-linear-to-r from-blue-600 to-purple-600 rounded-full blur opacity-0 group-hover:opacity-70 transition duration-500" />
+        <div className="absolute -inset-1 bg-transparent  rounded-full blur opacity-0 group-hover:opacity-70 transition duration-500" />
       )}
 
       {/* Content */}
-      <span className="relative flex items-center gap-3">
+      <span className="relative flex items-center justify-center gap-3">
         <span
-          className={`
-            w-5 h-5 transition-transform duration-500
+          className={`hidden lg:flex
+             w-5 h-5 transition-transform duration-500
             group-hover:rotate-45
           `}
         >
           {iconLeft}
         </span>
-
-        {text}
+        <span className="text-xs lg:text-sm ">{text}</span>
 
         <span
           className={`
-            w-5 h-5 
-              group-hover:animate-spin
+w-5 h-5              group-hover:animate-spin
           ${isOutlined ? "text-primary" : "text-yellow-300"}
           `}
         >
