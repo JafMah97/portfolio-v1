@@ -21,7 +21,7 @@ export default async function Hero({ lang }: { lang: Lang }) {
         as="div"
         className="relative z-10  flex items-center h-full"
       >
-        <div className="container max-w-7xl mx-auto px-4 py-10 h-full">
+        <div className="container max-w-6xl mx-auto px-4 py-10 h-full">
           <div className="flex flex-col-reverse md:flex-row gap-6 items-center justify-end md:justify-between h-full">
             {/* Left Column - Content */}
             <div className="text-left">

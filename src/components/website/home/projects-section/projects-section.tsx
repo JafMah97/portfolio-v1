@@ -1,64 +1,120 @@
-"use client";
-import { projects } from "@/content/projects-data";
-import { Lang } from "@/utils/translations/dictionary-utils";
+import { getDictionary, Lang } from "@/utils/translations/dictionary-utils";
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
-import  ShinyText  from "@/components/custom/motion/text-shine";
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import ProjectCard from "./project-card";
+import ShinyText from "@/components/custom/motion/text-shine";
+import ProjectsCarousel from "./projects-carousel";
+import { CarouselItem } from "@/components/ui/carousel";
 
-import Autoplay from "embla-carousel-autoplay";
-import ProjectCard from "../projects-section/project-card";
+export default async function Projects({ lang }: { lang: Lang }) {
+  const dict = (await getDictionary(lang)).projectsPage;
 
-export default function Projects({ lang }: { lang: Lang }) {
+  interface Project {
+    title: string;
+    description: string;
+    technologies: string[];
+    githubLink: string;
+    demoLink: string;
+    image: string;
+  }
+
+  const projects: Project[] = [
+    {
+      title: dict.projects.konektaSocial.title,
+      description: dict.projects.konektaSocial.description,
+      technologies: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "TailwindCSS",
+        "shadcn/ui",
+        "React Query",
+        "i18n",
+      ],
+      githubLink: "https://github.com/JafMah97/konekta-social-frontend",
+      demoLink: "https://konekta-social.vercel.app",
+      image: "/images/projects/konekta-frontend.png",
+    },
+    {
+      title: dict.projects.konektaBackend.title,
+      description: dict.projects.konektaBackend.description,
+      technologies: [
+        "Node.js",
+        "Fastify",
+        "TypeScript",
+        "Prisma ORM",
+        "PostgreSQL",
+        "Zod",
+      ],
+      githubLink: "https://github.com/JafMah97/konekta-social-backend",
+      demoLink:
+        "https://documenter.getpostman.com/view/37420761/2sB3WsQzuN#konekta-social-api",
+      image: "/images/projects/konekta-backend.png",
+    },
+    {
+      title: dict.projects.theDeal.title,
+      description: dict.projects.theDeal.description,
+      technologies: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "TailwindCSS",
+        "Radix UI",
+        "shadcn/ui",
+        "Framer Motion",
+        "React Hook Form",
+      ],
+      githubLink: "",
+      demoLink: "https://thedeal.qa",
+      image: "/images/projects/thedeal.png",
+    },
+    {
+      title: dict.projects.portfolio.title,
+      description: dict.projects.portfolio.description,
+      technologies: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "TailwindCSS",
+        "Framer Motion",
+        "shadcn/ui ",
+        "next-themes",
+      ],
+      githubLink: "https://github.com/JafMah97/portfolio",
+      demoLink: "https://portofolio-amber-gamma.vercel.app",
+      image: "/images/projects/portfolio.png",
+    },
+  ];
+
   return (
     <section className="relative py-24 backdrop-blur-xl bg-primary/10">
-      <div className="container max-w-7xl mx-auto px-4">
+      <div className="container max-w-6xl mx-auto px-4">
         {/* Section Title */}
         <MotionWrapper
           as="h2"
           fadeUp
-          className="text-4xl md:text-6xl font-bold  mb-6 text-center"
+          className="text-4xl md:text-6xl font-bold mb-6 text-center"
         >
-          <ShinyText text="Featured Projects" />
+          <ShinyText text={dict.title} />
         </MotionWrapper>
+        {/* Description */}
+        <MotionWrapper
+          fadeUp
+          delay={0.2}
+          className="max-w-3xl mx-auto text-center text-lg text-muted-foreground mb-16 leading-relaxed"
+        >
+          <p>{dict.description}</p>
+        </MotionWrapper>
+
         <div className=" px-15 py-10 rounded-4xl bg-primary/10">
           {/* Carousel */}
-          <Carousel
-            className="w-full"
-            opts={{
-              align: "start",
-              slidesToScroll: 1, // <— scroll one card at a time
-              breakpoints: {
-                "(min-width: 768px)": {
-                  slidesToScroll: 1, // <— enforce 1 slide scroll on md+
-                },
-              },
-            }}
-            plugins={[
-              Autoplay({
-                delay: 2500,
-                stopOnInteraction: false,
-              }),
-            ]}
-          >
-            <div className="absolute -inset-1 bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition duration-500 group-hover:duration-300 animate-pulse-slow" />
-            <CarouselContent>
-              {projects.map((project, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <ProjectCard project={project} index={index} lang={lang} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+          <ProjectsCarousel lang={lang}>
+            {projects.map((project, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <ProjectCard project={project} index={index} lang={lang} />
+              </CarouselItem>
+            ))}
+          </ProjectsCarousel>
         </div>
       </div>
     </section>

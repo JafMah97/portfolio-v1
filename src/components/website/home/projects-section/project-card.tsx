@@ -1,10 +1,9 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { Card, CardContent } from "@/components/ui/card";
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
+import { getDictionary, Lang } from "@/utils/translations/dictionary-utils";
 
 interface ProjectCardProps {
   project: {
@@ -16,14 +15,15 @@ interface ProjectCardProps {
     technologies: string[];
   };
   index: number;
-  lang: string;
+  lang: Lang;
 }
 
-export default function ProjectCard({
+export default async function ProjectCard({
   project,
   index,
   lang,
 }: ProjectCardProps) {
+  const dict = (await getDictionary(lang)).projectsPage.projectCard;
   return (
     <MotionWrapper
       fadeUp
@@ -58,7 +58,7 @@ export default function ProjectCard({
               >
                 <FaGithub className="w-6 h-6 text-white" />
                 <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-xs text-white bg-black/80 px-2 py-1 rounded whitespace-nowrap">
-                  View Code
+                  {dict.viewCode}
                 </span>
               </Link>
             )}
@@ -70,7 +70,7 @@ export default function ProjectCard({
             >
               <FaExternalLinkAlt className="w-6 h-6 text-white" />
               <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-xs text-white bg-black/80 px-2 py-1 rounded whitespace-nowrap">
-                Live Demo
+                {dict.liveDemo}
               </span>
             </Link>
           </div>
@@ -94,7 +94,7 @@ export default function ProjectCard({
             <div className="flex items-center gap-2 mb-3">
               <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
               <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                Stack
+                {dict.stack}
               </span>
             </div>
 
