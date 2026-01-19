@@ -1,4 +1,4 @@
-import About from "@/components/website/home/about-section/about";
+import About from "@/components/website/home/about-section/about-section";
 import Blogs from "@/components/website/home/Blogs";
 import Contact from "@/components/website/home/Contact";
 import Hero from "@/components/website/home/hero-section/hero-section";
@@ -15,7 +15,7 @@ export default async function HomePage({ params }: Props) {
   return (
     <div className="bg-primary/10">
       <Hero lang={lang} />
-      <About />
+      <About lang={lang} />
       <Projects lang={lang} />
       <Blogs lang={lang} />
       <Contact lang={lang} />

@@ -19,28 +19,45 @@
     "setting": "Setting"
   },
   "homePage": {
-    "hero":{
+    "hero": {
       "title": "Hi I'm Jafar ",
       "subTitle": "Front‑End Developer | Modern Web Experiences",
-      "imageAlt":"Jafar Mahmoud",
+      "imageAlt": "Jafar Mahmoud",
       "action": {
         "contact": "Contact Me",
         "projects": "View Projects"
       },
-      "social":{
-        "github":"GitHub",
-        "linkedIn":"LinkedIn",
-        "x":"X",
-        "email":"Email"
+      "social": {
+        "github": "GitHub",
+        "linkedIn": "LinkedIn",
+        "x": "X",
+        "email": "Email"
       },
-      "stats":{
-        "years":"Years Experience",
-        "projects":"Projects",
-        "technologies":"Technologies",
-        "satisfaction":"Satisfaction"
+      "stats": {
+        "years": "Years Experience",
+        "projects": "Projects",
+        "technologies": "Technologies",
+        "satisfaction": "Satisfaction"
       }
     }
-    
   },
-  "p": "test"
+  "aboutPage": {
+    "title": "About Me",
+    "description": "I’m a front‑end developer passionate about building smooth, modern, and accessible web experiences. I focus on clean UI engineering, performance, and creating interfaces that feel intuitive and alive. I love working across the stack, learning new tools, and crafting products that people enjoy using.",
+    "skills": {
+      "frontend": {
+        "title": "Frontend",
+        "items": ["Next.js / React", "TypeScript", "TailwindCSS", "shadcn/ui"]
+      },
+      "backend": {
+        "title": "Backend",
+        "items": ["Node.js / Fastify", "Prisma ORM", "PostgreSQL", "Zod"]
+      },
+      "tools": {
+        "title": "Tools & Workflow",
+        "items": ["Git & GitHub", "Framer Motion", "i18n", "Responsive UI/UX"]
+      }
+    },
+    "cta": "Learn More"
+  }
 }
