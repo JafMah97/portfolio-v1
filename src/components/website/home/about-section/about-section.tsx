@@ -7,9 +7,9 @@ import AboutDecoration from "./about-decoration";
 import { getDictionary, Lang } from "@/utils/translations/dictionary-utils";
 
 export default async function AboutSection({lang}:{lang:Lang}) {
-  const dict = (await getDictionary(lang)).aboutPage
+  const dict = (await getDictionary(lang)).homePage.aboutSection
   return (
-    <section className="py-24 relative bg-primary/10 overflow-hidden ">
+    <section className="py-24 relative backdrop-blur-2xl bg-primary/10 overflow-hidden ">
       {/* Background Particles */}
       <AboutDecoration />
 
@@ -18,7 +18,7 @@ export default async function AboutSection({lang}:{lang:Lang}) {
         <MotionWrapper
           fadeUp
           as="h2"
-          className="text-4xl md:text-6xl font-bold  mb-6 text-center"
+          className="text-4xl md:text-6xl font-bold mb-6 text-center"
         >
           <ShinyText text={dict.title} />
         </MotionWrapper>

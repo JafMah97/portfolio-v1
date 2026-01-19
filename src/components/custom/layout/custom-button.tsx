@@ -48,7 +48,7 @@ export default function CustomButton({
       <span className="relative flex items-center justify-center gap-3">
         <span
           className={`hidden lg:flex
-             w-5 h-5 transition-transform duration-500
+            w-5 h-5 transition-transform duration-500
             group-hover:rotate-45
           `}
         >
@@ -57,8 +57,7 @@ export default function CustomButton({
         <span className="text-xs lg:text-sm ">{text}</span>
 
         <span
-          className={`
-w-5 h-5              group-hover:animate-spin
+          className={`group-hover:animate-spin
           ${isOutlined ? "text-primary" : "text-yellow-300"}
           `}
         >

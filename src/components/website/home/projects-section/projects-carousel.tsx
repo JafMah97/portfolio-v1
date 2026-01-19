@@ -37,8 +37,8 @@ export default function ProjectsCarousel({children,lang}:{children:ReactNode,lan
         {children}
       </CarouselContent>
 
-      <CarouselPrevious dir={isRTL(lang) ? "rtl" : "ltr"} />
-      <CarouselNext dir={isRTL(lang) ? "rtl" : "ltr"} />
+      <CarouselPrevious dir={isRTL(lang) ? "rtl" : "ltr"} className="hidden md:flex" />
+      <CarouselNext dir={isRTL(lang) ? "rtl" : "ltr"} className="hidden md:flex" />
     </Carousel>
   );
 }

@@ -10,11 +10,11 @@ import { FaArrowDown } from "react-icons/fa";
 import HeroStatusBar from "./hero-Stats-bar";
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 
-export default async function Hero({ lang }: { lang: Lang }) {
-  const dictHero = (await getDictionary(lang)).homePage.hero;
+export default async function HeroSection({ lang }: { lang: Lang }) {
+  const dictHero = (await getDictionary(lang)).homePage.heroSection;
 
   return (
-    <section className="relative overflow-hidden w-full z-20 bg-primary/10 h-screen">
+    <section className="relative backdrop-blur-2xl overflow-hidden w-full z-20 bg-primary/10 h-screen">
       <HeroDecoration lang={lang} />
       {/* Main Content */}
       <MotionWrapper
@@ -43,7 +43,7 @@ export default async function Hero({ lang }: { lang: Lang }) {
               </MotionWrapper>
 
               {/* Stats Bar */}
-              <HeroStatusBar lang={lang}/>
+              <HeroStatusBar lang={lang} />
 
               {/* CTA Buttons */}
               <MotionWrapper
@@ -60,7 +60,7 @@ export default async function Hero({ lang }: { lang: Lang }) {
                     text={dictHero.action.projects}
                     iconLeft={<GoProjectRoadmap />}
                     iconRight={
-                      <FaArrowDown className="group-hover:translate-y-1 transition-transform" />
+                      <FaArrowDown className="group-hover:translate-y-1 transition-transform w-3 h-3 md:h-5 md:w-5" />
                     }
                     isOutlined
                   />
@@ -73,13 +73,13 @@ export default async function Hero({ lang }: { lang: Lang }) {
                     href={`/${lang}/contact`}
                     text={dictHero.action.contact}
                     iconLeft={<Phone />}
-                    iconRight={<Sparkles />}
+                    iconRight={<Sparkles className="w-3 h-3 md:h-5 md:w-5" />}
                   />
                 </MotionWrapper>
               </MotionWrapper>
 
               {/* Social Links with Enhanced Style */}
-              <HeroSocialLinks lang={lang}/>
+              <HeroSocialLinks lang={lang} />
             </div>
 
             {/* Right Column - Profile Image & Decoration */}

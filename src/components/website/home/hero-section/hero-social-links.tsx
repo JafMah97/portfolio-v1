@@ -6,7 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
 export default async function HeroSocialLinks({ lang }: { lang: Lang }) {
-  const dict = (await getDictionary(lang)).homePage.hero.social;
+  const dict = (await getDictionary(lang)).homePage.heroSection.social;
   const links = [
     {
       icon: <FaGithub className="w-6 h-6" />,

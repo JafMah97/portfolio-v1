@@ -2,7 +2,7 @@ import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 import { getDictionary, Lang } from "@/utils/translations/dictionary-utils";
 
 export default async function HeroStatsBar({ lang }: { lang: Lang }) {
-  const dict = (await getDictionary(lang)).homePage.hero.stats;
+  const dict = (await getDictionary(lang)).homePage.heroSection.stats;
   const staArr = [
     { value: "2+", label: dict.years },
     { value: "5+", label: dict.projects },

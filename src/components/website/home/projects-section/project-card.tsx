@@ -13,6 +13,7 @@ interface ProjectCardProps {
     githubLink: string;
     demoLink: string;
     technologies: string[];
+    cardLink:string;
   };
   index: number;
   lang: Lang;
@@ -23,7 +24,7 @@ export default async function ProjectCard({
   index,
   lang,
 }: ProjectCardProps) {
-  const dict = (await getDictionary(lang)).projectsPage.projectCard;
+  const dict = (await getDictionary(lang)).homePage.projectsSection.projectCard;
   return (
     <MotionWrapper
       fadeUp
@@ -78,42 +79,44 @@ export default async function ProjectCard({
 
         {/* Content */}
         <CardContent className="p-6 flex flex-col grow relative z-10">
-          <div className="mb-3">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
-              {project.title}
-            </h3>
-            <div className="w-12 h-1 bg-linear-to-r from-blue-500 to-purple-500 rounded-full mt-2 group-hover:w-20 transition-all duration-500" />
-          </div>
-
-          <p className="text-gray-600 dark:text-gray-300 line-clamp-3 mb-6">
-            {project.description}
-          </p>
-
-          {/* Tech Stack */}
-          <div className="mt-auto">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                {dict.stack}
-              </span>
+          <Link href={project.cardLink}>
+            <div className="mb-3">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
+                {project.title}
+              </h3>
+              <div className="w-12 h-1 bg-linear-to-r from-blue-500 to-purple-500 rounded-full mt-2 group-hover:w-20 transition-all duration-500" />
             </div>
 
-            <div className="flex flex-wrap gap-2">
-              {project.technologies.slice(0, 4).map((tech, i) => (
-                <span
-                  key={i}
-                  className="px-2.5 py-1 text-[11px] font-medium rounded-md bg-blue-500/5 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/10"
-                >
-                  {tech}
+            <p className="text-gray-600 dark:text-gray-300 line-clamp-3 mb-6">
+              {project.description}
+            </p>
+
+            {/* Tech Stack */}
+            <div className="mt-auto">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                  {dict.stack}
                 </span>
-              ))}
-              {project.technologies.length > 4 && (
-                <span className="px-2.5 py-1 text-[11px] font-medium rounded-md bg-gray-500/5 text-gray-500 border border-gray-500/10">
-                  +{project.technologies.length - 4}
-                </span>
-              )}
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.slice(0, 4).map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-2.5 py-1 text-[11px] font-medium rounded-md bg-blue-500/5 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/10"
+                  >
+                    {tech}
+                  </span>
+                ))}
+                {project.technologies.length > 4 && (
+                  <span className="px-2.5 py-1 text-[11px] font-medium rounded-md bg-gray-500/5 text-gray-500 border border-gray-500/10">
+                    +{project.technologies.length - 4}
+                  </span>
+                )}
+              </div>
             </div>
-          </div>
+          </Link>
         </CardContent>
 
         {/* Decorative Line */}

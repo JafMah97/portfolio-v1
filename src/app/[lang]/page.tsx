@@ -1,8 +1,8 @@
-import About from "@/components/website/home/about-section/about-section";
-import Blogs from "@/components/website/home/Blogs";
+import AboutSection from "@/components/website/home/about-section/about-section";
+import BlogsSection from "@/components/website/home/blogs-section.tsx/blogs-section";
 import Contact from "@/components/website/home/Contact";
-import Hero from "@/components/website/home/hero-section/hero-section";
-import Projects from "@/components/website/home/projects-section/projects-section";
+import HeroSection from "@/components/website/home/hero-section/hero-section";
+import ProjectsSection from "@/components/website/home/projects-section/projects-section";
 import { Lang } from "@/utils/translations/dictionary-utils";
 
 interface Props {
@@ -14,10 +14,10 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <div className="bg-primary/10">
-      <Hero lang={lang} />
-      <About lang={lang} />
-      <Projects lang={lang} />
-      <Blogs lang={lang} />
+      <HeroSection lang={lang} />
+      <AboutSection lang={lang} />
+      <ProjectsSection lang={lang} />
+      <BlogsSection lang={lang} />
       <Contact lang={lang} />
     </div>
   );

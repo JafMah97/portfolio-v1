@@ -5,9 +5,11 @@ import ProjectCard from "./project-card";
 import ShinyText from "@/components/custom/motion/text-shine";
 import ProjectsCarousel from "./projects-carousel";
 import { CarouselItem } from "@/components/ui/carousel";
+import CustomButton from "@/components/custom/layout/custom-button";
+import { Send, Sparkles } from "lucide-react";
 
-export default async function Projects({ lang }: { lang: Lang }) {
-  const dict = (await getDictionary(lang)).projectsPage;
+export default async function ProjectsSection({ lang }: { lang: Lang }) {
+  const dict = (await getDictionary(lang)).homePage.projectsSection;
 
   interface Project {
     title: string;
@@ -16,6 +18,7 @@ export default async function Projects({ lang }: { lang: Lang }) {
     githubLink: string;
     demoLink: string;
     image: string;
+    cardLink: string;
   }
 
   const projects: Project[] = [
@@ -34,6 +37,7 @@ export default async function Projects({ lang }: { lang: Lang }) {
       githubLink: "https://github.com/JafMah97/konekta-social-frontend",
       demoLink: "https://konekta-social.vercel.app",
       image: "/images/projects/konekta-frontend.png",
+      cardLink: "",
     },
     {
       title: dict.projects.konektaBackend.title,
@@ -50,6 +54,7 @@ export default async function Projects({ lang }: { lang: Lang }) {
       demoLink:
         "https://documenter.getpostman.com/view/37420761/2sB3WsQzuN#konekta-social-api",
       image: "/images/projects/konekta-backend.png",
+      cardLink: "",
     },
     {
       title: dict.projects.theDeal.title,
@@ -67,6 +72,7 @@ export default async function Projects({ lang }: { lang: Lang }) {
       githubLink: "",
       demoLink: "https://thedeal.qa",
       image: "/images/projects/thedeal.png",
+      cardLink: "",
     },
     {
       title: dict.projects.portfolio.title,
@@ -83,6 +89,7 @@ export default async function Projects({ lang }: { lang: Lang }) {
       githubLink: "https://github.com/JafMah97/portfolio",
       demoLink: "https://portofolio-amber-gamma.vercel.app",
       image: "/images/projects/portfolio.png",
+      cardLink: "",
     },
   ];
 
@@ -106,7 +113,7 @@ export default async function Projects({ lang }: { lang: Lang }) {
           <p>{dict.description}</p>
         </MotionWrapper>
 
-        <div className=" px-15 py-10 rounded-4xl bg-primary/10">
+        <div className=" px-3 md:px-15 py-10 rounded-4xl bg-primary/10">
           {/* Carousel */}
           <ProjectsCarousel lang={lang}>
             {projects.map((project, index) => (
@@ -115,6 +122,15 @@ export default async function Projects({ lang }: { lang: Lang }) {
               </CarouselItem>
             ))}
           </ProjectsCarousel>
+        </div>
+        {/* cta button */}
+        <div className="flex justify-center items-center py-10">
+          <CustomButton
+            href={`/${lang}/projects`}
+            iconLeft={<Send className="w-5 h-5" />}
+            text={dict.cta}
+            iconRight={<Sparkles className="w-5 h-5" />}
+          />
         </div>
       </div>
     </section>

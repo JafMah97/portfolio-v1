@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { FaArrowRight, FaCalendar, FaClock } from "react-icons/fa";
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
-import { blogs } from "@/content/blogs-data";
+import { blogs } from "@/components/website/home/blogs-section.tsx/blogs-data";
 import { Lang } from "@/utils/translations/dictionary-utils";
 import CustomButton from "@/components/custom/layout/custom-button";
 import { Send, Sparkles } from "lucide-react";
