@@ -136,7 +136,6 @@ export default function ShinyText  ({ text }: { text: string })  {
   const theme = useTheme().theme;
   const [color, setColor] = useState("#000000");
   const [shineColor,setShineColor] = useState("#ffffff")
-  console.log(theme)
   useEffect(() => {
     setTimeout(() => {
       setColor(theme === "light" ? "#000000" : "#ffffff");

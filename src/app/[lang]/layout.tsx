@@ -21,7 +21,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ lang: Lang }>;
 }) {
-  const { lang } = await params;
+  const { lang } = (await params) as { lang: Lang };
   const { siteMeta: dict } = await getDictionary(lang);
 
   return {
@@ -31,19 +31,18 @@ export async function generateMetadata({
     },
   };
 }
+interface RootLayoutProps {
+  children: React.ReactNode;
+  params: Promise<{ lang: string }>;
+}
 
 export default async function RootLayout({
   params,
   children,
-}: Readonly<{
-  children: React.ReactNode;
-  params: Promise<{ lang: Lang }>;
-}>) {
+}: RootLayoutProps) {
   const { lang } = (await params) as { lang: Lang };
   const translations = await getDictionary(lang);
-
   const fontClass = lang == "ar" ? arFont.className : enFont.className;
-
   return (
     <html lang={lang} dir={getDirection(lang)} suppressHydrationWarning>
       <body className={`${fontClass} antialiased`}>
@@ -60,9 +59,9 @@ export default async function RootLayout({
                 className: `antialiased ${fontClass}`,
               }}
             />
-            <Navbar lang={lang}/>
+            <Navbar lang={lang} />
             {children}
-            <Footer lang={lang}/>
+            <Footer lang={lang} />
           </ThemeProvider>
         </TranslationsProvider>
       </body>
