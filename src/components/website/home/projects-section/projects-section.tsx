@@ -104,11 +104,12 @@ export default async function ProjectsSection({ lang }: { lang: Lang }) {
         >
           <ShinyText text={dict.title} />
         </MotionWrapper>
+
         {/* Description */}
         <MotionWrapper
           fadeUp
           delay={0.2}
-          className="max-w-3xl mx-auto text-center text-lg text-muted-foreground mb-16 leading-relaxed"
+          className="max-w-3xl mx-auto text-center text-[16px] md:text-lg text-muted-foreground mb-5 md:mb-16 md:leading-relaxed"
         >
           <p>{dict.description}</p>
         </MotionWrapper>

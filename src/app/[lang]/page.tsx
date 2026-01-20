@@ -1,6 +1,6 @@
 import AboutSection from "@/components/website/home/about-section/about-section";
 import BlogsSection from "@/components/website/home/blogs-section.tsx/blogs-section";
-import Contact from "@/components/website/home/Contact";
+import ContactSection from "@/components/website/home/contact-section/contact-section";
 import HeroSection from "@/components/website/home/hero-section/hero-section";
 import ProjectsSection from "@/components/website/home/projects-section/projects-section";
 import { Lang } from "@/utils/translations/dictionary-utils";
@@ -18,7 +18,7 @@ export default async function HomePage({ params }: Props) {
       <AboutSection lang={lang} />
       <ProjectsSection lang={lang} />
       <BlogsSection lang={lang} />
-      <Contact lang={lang} />
+      <ContactSection lang={lang} />
     </div>
   );
 }

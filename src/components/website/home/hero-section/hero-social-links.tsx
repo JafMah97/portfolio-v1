@@ -54,8 +54,8 @@ export default async function HeroSocialLinks({ lang }: { lang: Lang }) {
               className="relative group "
               aria-label={social.label}
             >
-              <div className="relative w-12 h-12 rounded-full bg-primary/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 flex items-center justify-center group-hover:border-transparent transition-colors">
-                <div className="text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors">
+              <div className="relative w-12 h-12 rounded-full bg-primary backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 flex items-center justify-center group-hover:border-transparent transition-colors">
+                <div className=" text-gray-300 group-hover:text-white transition-colors">
                   {social.icon}
                 </div>
               </div>

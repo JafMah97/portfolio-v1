@@ -113,11 +113,18 @@
           "readTime": "7 min read"
         }
       ],
-      "readMore":"read more"
+      "readMore": "read more"
     },
     "contactSection": {
-      "title": "",
-      "description": ""
+      "title": "Let's Connect",
+      "description": "Available for product‑focused roles and contract work. I build reliable, user‑centered web applications with Next.js, TypeScript, and Tailwind, and I lead features from design to production. If you’re hiring engineers who value clean architecture, performance, and collaboration, let’s talk—send a message or schedule a quick call to discuss fit today.",
+      "cta": "Send a Message",
+      "contacts":{
+        "github":"GitHub",
+        "linkedIn":"LinkedIn",
+        "email":"Email",
+        "phone":"Phone"
+      }
     }
   }
 }

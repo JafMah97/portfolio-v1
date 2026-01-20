@@ -62,7 +62,7 @@ export default async function RootLayout({
             />
             <Navbar lang={lang}/>
             {children}
-            <Footer/>
+            <Footer lang={lang}/>
           </ThemeProvider>
         </TranslationsProvider>
       </body>

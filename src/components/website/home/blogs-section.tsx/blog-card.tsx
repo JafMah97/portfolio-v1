@@ -44,11 +44,11 @@ export default async function BlogCard({ blog, index,lang }: BlogCardProps) {
           </p>
 
           {/* Metadata */}
-          <div className="flex items-center justify-between pt-6 border-t border-gray-100 dark:border-gray-700/50">
-            <div className="flex items-center space-x-6">
+          <div className="flex flex-col md:flex-row gap-2 items-center justify-between pt-6 border-t border-gray-100 dark:border-gray-700/50">
+            <div className="flex items-center md:space-x-6">
               <span className="flex items-center text-sm font-medium text-gray-500 dark:text-gray-400">
                 <FaCalendar className="mr-2 text-blue-500" />
-                <span className="bg-white/50 dark:bg-gray-700/50 px-3 py-1 rounded-full text-xs">
+                <span className="md:bg-white/50 md:dark:bg-gray-700/50 px-3 py-1 rounded-full text-xs">
                   {new Date(blog.date).toLocaleDateString(lang === "en"?"en-US":"ar", {
                     month: "short",
                     day: "numeric",
@@ -59,14 +59,14 @@ export default async function BlogCard({ blog, index,lang }: BlogCardProps) {
 
               <span className="flex items-center text-xs font-medium text-gray-500 dark:text-gray-400">
                 <FaClock className="mr-2 text-purple-500" />
-                <span className="bg-white/50 dark:bg-gray-700/50 px-3 py-1 rounded-full text-xs">
+                <span className="md:bg-white/50 md:dark:bg-gray-700/50 px-3 py-1 rounded-full text-xs">
                   {blog.readTime}
                 </span>
               </span>
             </div>
 
             {/* Read more */}
-            <div className="flex items-center text-blue-600 dark:text-blue-400 font-medium group-hover:translate-x-2 transition-transform duration-300 gap-1 justify-center ">
+            <div className="flex items-center text-blue-600 dark:text-blue-400 font-medium group-hover:translate-x-2 transition-transform duration-300 gap-1 justify-center text-nowrap">
               <span className="mr-2 text-xs">{dict.readMore}</span>
               {isRTL(lang) ? (
                 <FaArrowLeft className="text-xs" />
