@@ -119,12 +119,143 @@
       "title": "Let's Connect",
       "description": "Available for product‑focused roles and contract work. I build reliable, user‑centered web applications with Next.js, TypeScript, and Tailwind, and I lead features from design to production. If you’re hiring engineers who value clean architecture, performance, and collaboration, let’s talk—send a message or schedule a quick call to discuss fit today.",
       "cta": "Send a Message",
-      "contacts":{
-        "github":"GitHub",
-        "linkedIn":"LinkedIn",
-        "email":"Email",
-        "phone":"Phone"
+      "contacts": {
+        "github": "GitHub",
+        "linkedIn": "LinkedIn",
+        "email": "Email",
+        "phone": "Phone"
       }
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "The Developer Behind The Code",
+      "subtitle": "I transform complex problems into elegant solutions through code. With a background in engineering and a passion for technology, I bridge the gap between creativity and functionality.",
+      "cards": {
+        "projects": "Projects created & published",
+        "technologies": "Technologies learnt",
+        "years": "Years Experience"
+      }
+    },
+    "philosophy": {
+      "title": "Development Philosophy",
+      "subtitle": "A clear philosophy guides every line of code — from understanding the problem to crafting meaningful, scalable solutions.",
+      "cards": {
+        "problemFirst": {
+          "title": "Problem-First Approach",
+          "description": "Understanding the problem completely before writing a single line of code ensures efficient solutions."
+        },
+        "innovativeSolutions": {
+          "title": "Innovative Solutions",
+          "description": "Leveraging cutting-edge technologies to create forward-thinking, scalable applications."
+        },
+        "continuousGrowth": {
+          "title": "Continuous Growth",
+          "description": "Always learning and adapting to new technologies and methodologies in the fast-paced tech world."
+        }
+      }
+    },
+    "arsenal": {
+      "title": "Technical Arsenal",
+      "subtitle": "A comprehensive toolkit of modern technologies and frameworks I leverage to build scalable, performant, and user‑centric web applications. Each skill is backed by real‑world project experience and continuous learning.",
+      "categories": {
+        "core": "Core Technologies",
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "tools": "Tools & Libraries"
+      }
+    },
+    "journey": {
+      "title": "Career Journey",
+      "subtitle": "Every step reflects growth, discipline, and a commitment to mastering the craft of modern web development.",
+      "experiences": {
+        "foundations": {
+          "title": "Frontend Foundations",
+          "company": "Self‑Taught",
+          "period": "2023",
+          "description": "Built a strong foundation in HTML, CSS, and JavaScript while developing consistency and problem‑solving discipline.",
+          "achievements": [
+            "Completed multiple practice projects",
+            "Mastered core web fundamentals",
+            "Developed structured UI and component thinking"
+          ]
+        },
+        "modernFrontend": {
+          "title": "Modern Frontend Development",
+          "company": "Self‑Taught",
+          "period": "2024",
+          "description": "Advanced into modern frontend development with React, Next.js, TypeScript, and scalable UI architecture.",
+          "achievements": [
+            "Built several learning projects (prayer times app, task manager, etc.)",
+            "Learned state management, and API integration",
+            "Developed reusable UI/UX patterns"
+          ]
+        },
+        "firstProject": {
+          "title": "First Project Fundamentals & Practical Experience",
+          "company": "Personal Projects",
+          "period": "2023 – 2024",
+          "description": "Gained hands‑on experience building and building backend and frontend systems for konekta project, learning core concepts and real‑world workflows.",
+          "achievements": [
+            "Implemented authentication, databases, and API design",
+            "Built konekta backend and frontend",
+            "Developed confidence navigating frontend and backend environments"
+          ]
+        },
+        "freelanceFrontend": {
+          "title": "Freelance Frontend Developer",
+          "company": "Client Project",
+          "period": "1 Month",
+          "description": "Delivered a complete frontend application for a client, translating requirements into a polished user experience.",
+          "achievements": [
+            "Completed first paid freelance project",
+            "Managed client communication and expectations",
+            "Delivered a production‑ready frontend"
+          ]
+        },
+        "konekta": {
+          "title": "Konekta Platform Rebuild",
+          "company": "Personal Project",
+          "period": "4 Months",
+          "description": "Rebuilt the entire Konekta platform from scratch, improving structure, performance, and user experience.",
+          "achievements": [
+            "Rebuilt backend with improved clarity and organization",
+            "Rebuilt frontend with modern UI/UX",
+            "Implemented scalable patterns and reusable components"
+          ]
+        },
+        "portfolio": {
+          "title": "Portfolio & Personal Branding",
+          "company": "Self‑Driven",
+          "period": "1 Month",
+          "description": "Building a polished, professional portfolio to showcase skills, projects, and development philosophy.",
+          "achievements": [
+            "Designed and built a full portfolio",
+            "Implemented animations, i18n, and advanced UI",
+            "Documented skills and real‑world experience"
+          ]
+        }
+      }
+    },
+    "academic": {
+      "title": "Academic Background",
+      "subtitle": "A strong academic foundation shaped my analytical thinking and problem‑solving approach. Studying mechatronics exposed me to systems design, automation, and programming, giving me a multidisciplinary mindset that blends engineering logic with creativity. These experiences continue to influence how I build software and approach technical challenges.",
+      "degree": {
+        "title": "Bachelor of Technology in Mechatronics Engineering",
+        "university": "Latakia University • 2015 - 2021",
+        "tags": {
+          "honors": "Graduated with Honors",
+          "automation": "Focus on Automation",
+          "software": "Software Specialization"
+        }
+      },
+      "description": "My engineering background provided a unique problem‑solving mindset, combining analytical thinking with creative solutions. The curriculum emphasized systems thinking, automation, and programming—skills that directly translate to software development. I excelled in software‑related courses, mastering C++, Python, and embedded systems, which laid the foundation for my transition into full‑stack web development.",
+      "skills": [
+        "Systems Thinking",
+        "Problem Solving",
+        "Algorithm Design",
+        "Project Management"
+      ]
     }
   }
 }

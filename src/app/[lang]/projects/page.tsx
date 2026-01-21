@@ -190,20 +190,6 @@
 //         </div>
 //       </section>
 
-//       <style jsx global>{`
-//         @keyframes float-slow {
-//           0%,
-//           100% {
-//             transform: translate(0, 0);
-//           }
-//           50% {
-//             transform: translate(15px, -25px);
-//           }
-//         }
-//         .animate-float-slow {
-//           animation: float-slow 8s ease-in-out infinite;
-//         }
-//       `}</style>
 //     </div>
 //   );
 // }
