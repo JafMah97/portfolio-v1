@@ -7,13 +7,13 @@ import { Mail, ArrowRight, Sparkles, Target, Zap } from "lucide-react";
 export default async function CtaSection({ lang }: { lang: Lang }) {
   const dict = (await getDictionary(lang)).projectsPage.cta;
   const content = {
-    title: dict.project_title,
-    description: dict.project_description,
+    title: dict.projectTitle,
+    description: dict.projectDescription,
     buttonText: dict.button,
     features: [
-      { icon: <Target size={16} />, text: dict.features.custom_solutions },
-      { icon: <Zap size={16} />, text: dict.features.fast_delivery },
-      { icon: <Sparkles size={16} />, text: dict.features.quality_guaranteed },
+      { icon: <Target size={16} />, text: dict.features.customSolutions },
+      { icon: <Zap size={16} />, text: dict.features.fastDelivery },
+      { icon: <Sparkles size={16} />, text: dict.features.qualityGuaranteed },
     ],
   };
 

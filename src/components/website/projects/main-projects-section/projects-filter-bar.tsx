@@ -3,13 +3,14 @@
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 import { FaSearch, FaTimes } from "react-icons/fa";
 import { LayoutGrid, List } from "lucide-react";
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { debounce } from "ts-debounce";
-
-
+import { Lang } from "@/utils/translations/dictionary-utils";
+import { useTranslation } from "@/providers/translation-provider";
 
 interface Props {
+  lang: Lang;
   setIsGrid: (isGrid: boolean) => void;
   isGrid: boolean;
   initialQuery: string;
@@ -23,30 +24,33 @@ export default function ProjectsFilterBar({
   const router = useRouter();
   const searchParams = useSearchParams();
   const [query, setQuery] = useState(initialQuery);
+  const dict = useTranslation().projectsPage.main.projectsFilterBar;
 
-  const updateURL = (value: string) => {
-    const params = new URLSearchParams(searchParams.toString());
+  const updateURL = useCallback(
+    (value: string) => {
+      const params = new URLSearchParams(searchParams.toString());
 
-    if (value) {
-      params.set("q", value);
-    } else {
-      params.delete("q");
-    }
+      if (value) {
+        params.set("q", value);
+      } else {
+        params.delete("q");
+      }
 
-    router.push(`?${params.toString()}`, { scroll: false });
-  };
+      router.push(`?${params.toString()}`, { scroll: false });
+    },
+    [searchParams, router],
+  );
 
-const debouncedUpdateURL = debounce((value: string) => {
-  updateURL(value);
-}, 1000);
-
+  const debouncedUpdateURL = useMemo(
+    () => debounce((value: string) => updateURL(value), 500),
+    [updateURL],
+  );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setQuery(value);
     debouncedUpdateURL(value);
   };
-
 
   const handleClear = () => {
     setQuery("");
@@ -105,7 +109,7 @@ const debouncedUpdateURL = debounce((value: string) => {
 
           <input
             type="text"
-            placeholder="Search projects..."
+            placeholder={dict.searchPlaceholder}
             value={query}
             onChange={handleChange}
             className="
@@ -119,7 +123,7 @@ const debouncedUpdateURL = debounce((value: string) => {
             "
           />
 
-          {/* Clear Button (UI only) */}
+          {/* Clear Button  */}
           <button
             onClick={handleClear}
             className="
@@ -135,18 +139,18 @@ const debouncedUpdateURL = debounce((value: string) => {
         {/* View Mode Toggle */}
         <div
           className="
-            flex p-1 bg-gray-200/40 dark:bg-gray-700/40 
-            rounded-xl backdrop-blur-sm
+            md:flex p-1 bg-gray-200/40 dark:bg-gray-700/40 
+            rounded-xl backdrop-blur-sm hidden 
           "
         >
           <button onClick={handleGrid} className={styleGrid}>
             <LayoutGrid className="w-4 h-4" />
-            Grid
+            {dict.grid}
           </button>
 
           <button onClick={handleList} className={styleList}>
             <List className="w-4 h-4" />
-            List
+            {dict.list}
           </button>
         </div>
       </div>

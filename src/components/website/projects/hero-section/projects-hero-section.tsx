@@ -67,7 +67,7 @@ export default async function ProjectsHeroSection({ lang }: { lang: Lang }) {
             className="w-full max-w-4xl mx-auto"
           >
             <div className="text-sm text-muted-foreground mb-3 text-center">
-              {dict.technologies_label}
+              {dict.technologiesLabel}
             </div>
             <div className="flex flex-wrap justify-center gap-3">
               {technologies.map((tech, i) => (

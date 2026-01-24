@@ -14,6 +14,8 @@ export default async function MainProjectsSection({
   const query = (searchParams?.q || "").toLowerCase();
   const { projects: dictProjects } = (await getDictionary(lang)).homePage
     .projectsSection;
+  const sub = (await getDictionary(lang)).projectsPage.main.subtitle;
+
   const projects: Project[] = [
     {
       title: dictProjects.konektaSocial.title,
@@ -85,9 +87,8 @@ export default async function MainProjectsSection({
       cardLink: "",
     },
     {
-      title: "Simple React Todo App",
-      description:
-        "A simple React practice project focused on building a clean and functional todo application. It includes basic CRUD operations, state management, and a straightforward UI to reinforce core React concepts.",
+      title: dictProjects.reactTodo.title,
+      description: dictProjects.reactTodo.description,
       technologies: ["React", "Vite", "Material UI (MUI)"],
       githubLink: "https://github.com/JafMah97/konekta-social-frontend",
       demoLink: "https://github.com/JafMah97/reactTodoApp",
@@ -95,9 +96,8 @@ export default async function MainProjectsSection({
       cardLink: "",
     },
     {
-      title: "Simple landing page",
-      description:
-        "HairDay Salon is a simple landing page built using only HTML and CSS as a practice project. The goal was to focus on clean structure, semantic markup, and responsive styling without relying on frameworks.",
+      title: dictProjects.hairday.title,
+      description: dictProjects.hairday.description,
       technologies: ["HTML", "CSS"],
       githubLink: "https://github.com/JafMah97/HairDayWebsite",
       demoLink: "https://jafmah97.github.io/HairDayWebsite/",
@@ -115,8 +115,20 @@ export default async function MainProjectsSection({
   return (
     <section className="relative pb-24 backdrop-blur-xl bg-primary/10">
       <div className="container max-w-6xl mx-auto px-4">
+        {/* Subtitle */}
+        <MotionWrapper
+          fadeUp
+          delay={0.2}
+          className="max-w-3xl mx-auto text-center text-[16px] md:text-lg mb-5 md:mb-16 md:leading-relaxed"
+        >
+          <p>{sub}</p>
+        </MotionWrapper>
         {/* search bar and select */}
-        <ProjectsWrapper initialQuery={query}>
+        <ProjectsWrapper
+          initialQuery={query}
+          projectsLength={filteredProjects.length}
+          lang={lang}
+        >
           {filteredProjects.map((p, index) => {
             return (
               <MotionWrapper key={index} fadeUp stagger={index * 0.1}>

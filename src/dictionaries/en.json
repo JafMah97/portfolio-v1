@@ -83,6 +83,14 @@
         "portfolio": {
           "title": "Portfolio",
           "description": "This personal portfolio website presents my work through a clean, structured layout that highlights selected projects, technical strengths, and development approach. It reflects my focus on clarity, scalability, and thoughtful engineering, offering a concise overview of my experience and the way I build digital products."
+        },
+        "hairday": {
+          "title": "HairDay Salon",
+          "description": "HairDay Salon is a simple landing page built using only HTML and CSS as a practice project. The goal was to focus on clean structure, semantic markup, and responsive styling without relying on frameworks."
+        },
+        "reactTodo": {
+          "title": "Simple React Todo App",
+          "description": "A simple React practice project focused on building a clean and functional todo application. It includes basic CRUD operations, state management, and a straightforward UI to reinforce core React concepts."
         }
       },
       "cta": "Show All"
@@ -262,19 +270,28 @@
     "heroSection": {
       "title": "Crafting Digital Experiences",
       "subtitle": "Transforming ideas into interactive realities. Explore my collection of innovative projects that blend cutting-edge technology with exceptional design.",
-      "technologies_label": "Built with modern technologies"
+      "technologiesLabel": "Built with modern technologies"
+    },
+    "main": {
+      "subtitle": "Bringing ideas to life through code. Each project tells a story of problem-solving, innovation, and attention to detail—showcasing the intersection of technology and design.",
+      "noProjects": "   No projects found.",
+      "projectsFilterBar": {
+        "searchPlaceholder": "Search projects...",
+        "grid": "Grid",
+        "list": "List"
+      }
     },
     "cta": {
       "title": "Ready to Transform Your Vision?",
       "description": "Let's collaborate on creating exceptional digital experiences that drive results. From concept to deployment, I'm here to bring your ideas to life with innovative solutions and cutting-edge technology.",
       "button": "Contact Me",
       "features": {
-        "custom_solutions": "Custom Solutions",
-        "fast_delivery": "Fast Delivery",
-        "quality_guaranteed": "Quality Guaranteed"
+        "customSolutions": "Custom Solutions",
+        "fastDelivery": "Fast Delivery",
+        "qualityGuaranteed": "Quality Guaranteed"
       },
-      "project_title": "Let's Build Something Amazing Together",
-      "project_description": "Have a project in mind? I'm ready to bring your ideas to life with cutting-edge solutions and creative expertise."
+      "projectTitle": "Let's Build Something Amazing Together",
+      "projectDescription": "Have a project in mind? I'm ready to bring your ideas to life with cutting-edge solutions and creative expertise."
     }
   }
 }
