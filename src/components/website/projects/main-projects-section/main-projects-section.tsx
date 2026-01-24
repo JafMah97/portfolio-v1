@@ -1,8 +1,8 @@
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 import { getDictionary, Lang } from "@/utils/translations/dictionary-utils";
-import { Project } from "../../home/projects-section/projects-section";
 import ProjectCard from "../../home/projects-section/project-card";
 import ProjectsWrapper from "./projects-wrapper";
+import projectsData, { Project } from "@/constants/projects-data";
 
 export default async function MainProjectsSection({
   lang,
@@ -12,99 +12,9 @@ export default async function MainProjectsSection({
   searchParams?: { q?: string };
 }) {
   const query = (searchParams?.q || "").toLowerCase();
-  const { projects: dictProjects } = (await getDictionary(lang)).homePage
-    .projectsSection;
-  const sub = (await getDictionary(lang)).projectsPage.main.subtitle;
+  const projects: Project[] = await projectsData(lang);
 
-  const projects: Project[] = [
-    {
-      title: dictProjects.konektaSocial.title,
-      description: dictProjects.konektaSocial.description,
-      technologies: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "TailwindCSS",
-        "shadcn/ui",
-        "React Query",
-        "i18n",
-      ],
-      githubLink: "https://github.com/JafMah97/konekta-social-frontend",
-      demoLink: "https://konekta-social.vercel.app",
-      image: "/images/projects/konekta-frontend.png",
-      cardLink: "",
-    },
-    {
-      title: dictProjects.konektaBackend.title,
-      description: dictProjects.konektaBackend.description,
-      technologies: [
-        "Node.js",
-        "Fastify",
-        "TypeScript",
-        "Prisma ORM",
-        "PostgreSQL",
-        "Zod",
-      ],
-      githubLink: "https://github.com/JafMah97/konekta-social-backend",
-      demoLink:
-        "https://documenter.getpostman.com/view/37420761/2sB3WsQzuN#konekta-social-api",
-      image: "/images/projects/konekta-backend.png",
-      cardLink: "",
-    },
-    {
-      title: dictProjects.theDeal.title,
-      description: dictProjects.theDeal.description,
-      technologies: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "TailwindCSS",
-        "Radix UI",
-        "shadcn/ui",
-        "Framer Motion",
-        "React Hook Form",
-      ],
-      githubLink: "",
-      demoLink: "https://thedeal.qa",
-      image: "/images/projects/thedeal.png",
-      cardLink: "",
-    },
-    {
-      title: dictProjects.portfolio.title,
-      description: dictProjects.portfolio.description,
-      technologies: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "TailwindCSS",
-        "Framer Motion",
-        "shadcn/ui ",
-        "next-themes",
-      ],
-      githubLink: "https://github.com/JafMah97/portfolio",
-      demoLink: "https://portofolio-amber-gamma.vercel.app",
-      image: "/images/projects/portfolio.png",
-      cardLink: "",
-    },
-    {
-      title: dictProjects.reactTodo.title,
-      description: dictProjects.reactTodo.description,
-      technologies: ["React", "Vite", "Material UI (MUI)"],
-      githubLink: "https://github.com/JafMah97/konekta-social-frontend",
-      demoLink: "https://github.com/JafMah97/reactTodoApp",
-      image: "/images/projects/react-todo-app.png",
-      cardLink: "",
-    },
-    {
-      title: dictProjects.hairday.title,
-      description: dictProjects.hairday.description,
-      technologies: ["HTML", "CSS"],
-      githubLink: "https://github.com/JafMah97/HairDayWebsite",
-      demoLink: "https://jafmah97.github.io/HairDayWebsite/",
-      image: "/images/projects/hair-day-salon.png",
-      cardLink: "",
-    },
-  ];
+  const sub = (await getDictionary(lang)).projectsPage.main.subtitle;
 
   const filteredProjects = projects.filter((p) => {
     const text =

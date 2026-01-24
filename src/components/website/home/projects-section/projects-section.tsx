@@ -7,93 +7,11 @@ import ProjectsCarousel from "./projects-carousel";
 import { CarouselItem } from "@/components/ui/carousel";
 import CustomButton from "@/components/custom/layout/custom-button";
 import { Send, Sparkles } from "lucide-react";
-
-
-  export interface Project {
-    title: string;
-    description: string;
-    technologies: string[];
-    githubLink: string;
-    demoLink: string;
-    image: string;
-    cardLink: string;
-  }
-
+import projectsData, { Project } from "@/constants/projects-data";
 
 export default async function ProjectsSection({ lang }: { lang: Lang }) {
   const dict = (await getDictionary(lang)).homePage.projectsSection;
-
-  const projects: Project[] = [
-    {
-      title: dict.projects.konektaSocial.title,
-      description: dict.projects.konektaSocial.description,
-      technologies: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "TailwindCSS",
-        "shadcn/ui",
-        "React Query",
-        "i18n",
-      ],
-      githubLink: "https://github.com/JafMah97/konekta-social-frontend",
-      demoLink: "https://konekta-social.vercel.app",
-      image: "/images/projects/konekta-frontend.png",
-      cardLink: "",
-    },
-    {
-      title: dict.projects.konektaBackend.title,
-      description: dict.projects.konektaBackend.description,
-      technologies: [
-        "Node.js",
-        "Fastify",
-        "TypeScript",
-        "Prisma ORM",
-        "PostgreSQL",
-        "Zod",
-      ],
-      githubLink: "https://github.com/JafMah97/konekta-social-backend",
-      demoLink:
-        "https://documenter.getpostman.com/view/37420761/2sB3WsQzuN#konekta-social-api",
-      image: "/images/projects/konekta-backend.png",
-      cardLink: "",
-    },
-    {
-      title: dict.projects.theDeal.title,
-      description: dict.projects.theDeal.description,
-      technologies: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "TailwindCSS",
-        "Radix UI",
-        "shadcn/ui",
-        "Framer Motion",
-        "React Hook Form",
-      ],
-      githubLink: "",
-      demoLink: "https://thedeal.qa",
-      image: "/images/projects/thedeal.png",
-      cardLink: "",
-    },
-    {
-      title: dict.projects.portfolio.title,
-      description: dict.projects.portfolio.description,
-      technologies: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "TailwindCSS",
-        "Framer Motion",
-        "shadcn/ui ",
-        "next-themes",
-      ],
-      githubLink: "https://github.com/JafMah97/portfolio",
-      demoLink: "https://portofolio-amber-gamma.vercel.app",
-      image: "/images/projects/portfolio.png",
-      cardLink: "",
-    },
-  ];
+  const projects: Project[] = (await projectsData(lang)).slice(0,4);
 
   return (
     <section className="relative py-24 backdrop-blur-xl bg-primary/10">
