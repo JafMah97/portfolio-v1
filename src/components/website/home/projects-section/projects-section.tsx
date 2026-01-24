@@ -8,10 +8,8 @@ import { CarouselItem } from "@/components/ui/carousel";
 import CustomButton from "@/components/custom/layout/custom-button";
 import { Send, Sparkles } from "lucide-react";
 
-export default async function ProjectsSection({ lang }: { lang: Lang }) {
-  const dict = (await getDictionary(lang)).homePage.projectsSection;
 
-  interface Project {
+  export interface Project {
     title: string;
     description: string;
     technologies: string[];
@@ -20,6 +18,10 @@ export default async function ProjectsSection({ lang }: { lang: Lang }) {
     image: string;
     cardLink: string;
   }
+
+
+export default async function ProjectsSection({ lang }: { lang: Lang }) {
+  const dict = (await getDictionary(lang)).homePage.projectsSection;
 
   const projects: Project[] = [
     {

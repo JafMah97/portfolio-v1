@@ -17,6 +17,7 @@ interface ProjectCardProps {
   };
   index: number;
   lang: Lang;
+  
 }
 
 export default async function ProjectCard({
