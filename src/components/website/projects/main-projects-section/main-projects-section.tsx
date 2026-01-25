@@ -41,9 +41,9 @@ export default async function MainProjectsSection({
         >
           {filteredProjects.map((p, index) => {
             return (
-              <MotionWrapper key={index} fadeUp stagger={index * 0.1}>
-                <ProjectCard index={index} project={p} lang={lang} />
-              </MotionWrapper>
+              
+                <ProjectCard key={index} index={index} project={p} lang={lang} />
+              
             );
           })}
         </ProjectsWrapper>

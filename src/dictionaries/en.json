@@ -293,5 +293,401 @@
       "title": "Simple React Todo App",
       "description": "A simple React practice project focused on building a clean and functional todo application. It includes basic CRUD operations, state management, and a straightforward UI to reinforce core React concepts."
     }
+  },
+  "detailedProject": {
+    "konektaSocial": {
+      "title": "Konekta Social",
+      "shortDescription": "A full‑stack social platform built to master modern frontend engineering while designing a complete backend API from scratch.",
+      "overview": "Konekta Social is a full‑stack project I built to deepen my understanding of modern frontend engineering while also challenging myself to design and implement a complete backend API. Since no free API offered all the features I needed in one place, I decided to build both sides of the application myself.The project uses a modern, in‑demand tech stack across both frontend and backend. I implemented a full authentication system (email confirmation, password reset, magic links, secure login/logout), although the UI flows are not active in production because email APIs require a live domain and SMTP is blocked on free hosting tiers.Despite those limitations, the entire system is fully implemented in code and demonstrates real‑world architecture, protected routes, optimistic UI updates, and multilingual support (Arabic + English).",
+      "features": [
+        "User authentication (login, logout, JWT-based sessions)",
+        "Email confirmation, password reset, and magic link flows (UI ready, backend implemented)",
+        "Post CRUD for authenticated users",
+        "Comment CRUD",
+        "Like / Unlike posts and comments",
+        "Protected feed routes with authorization",
+        "Optimistic UI updates for fast interactions",
+        "Full localization (Arabic + English)",
+        "Light and dark themes",
+        "Axios-based API layer with typed responses"
+      ],
+      "techStack": {
+        "frontend": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "TailwindCSS",
+          "shadcn/ui",
+          "React Query",
+          "Axios",
+          "i18n (Arabic + English)"
+        ],
+        "backend": [
+          "Node.js",
+          "Fastify",
+          "TypeScript",
+          "Prisma ORM",
+          "PostgreSQL",
+          "Zod validation",
+          "JWT authentication"
+        ],
+        "deployment": [
+          "Frontend: Vercel",
+          "Backend: Railway (free tier)",
+          "Database: Railway PostgreSQL"
+        ]
+      },
+      "architecture": {
+        "frontend": "Next.js App Router with server components, client components where needed, React Query for data fetching and caching, optimistic updates for fast UI, and a modular UI system built with shadcn/ui and TailwindCSS. Axios is used as the main HTTP client with a typed API layer and unified error handling.",
+        "backend": "Fastify REST API with a clean modular route structure, Prisma ORM for database access, Zod for schema validation, and JWT-based authentication. Routes are protected using authorization middleware. All backend errors follow a normalized shape to simplify frontend error handling.",
+        "database": "PostgreSQL schema designed with Prisma, including users, posts, comments, likes, and session tokens."
+      },
+      "challenges": [
+        "Handling HTTP-only cookies differently in development vs production",
+        "Designing a complete authentication system without paid email services",
+        "Ensuring consistent error shapes between backend and frontend",
+        "Managing optimistic UI updates in a scalable way",
+        "Ensuring localization works across routes and components",
+        "Managing dark/light theme persistence",
+        "Deploying backend + database on Railway free tier with strict limitations",
+        "Understanding differences between Vercel, Railway, and Render environments"
+      ],
+      "solutions": [
+        "Implemented full auth logic with secure HTTP-only cookies and environment-based cookie configuration",
+        "Created a normalized backend error format to simplify Axios error handling",
+        "Used React Query mutation lifecycle for optimistic updates",
+        "Created a reusable i18n dictionary system for AR/EN",
+        "Used next-themes for theme persistence",
+        "Added fallback UI and warnings for Railway downtime",
+        "Learned how Vercel, Railway, and Render handle environment variables, cold starts, and request lifecycles"
+      ],
+      "learnedAspects": [
+        "How HTTP-only cookies behave differently in dev vs prod (localhost vs HTTPS)",
+        "How to normalize backend error shapes for predictable frontend handling",
+        "How to structure a scalable Axios API layer",
+        "How to debug deployment issues across Vercel, Railway, and Render",
+        "How to design backend routes that match real business requirements",
+        "How to build a project that feels like a real production system, not a demo"
+      ],
+      "limitations": [
+        "Email flows cannot run in production because SMTP is blocked on Railway free tier",
+        "Backend may sleep or become unavailable due to Railway free tier policies",
+        "Some auth UI screens are implemented but disabled in production"
+      ],
+      "futureImprovements": [
+        "Enable email flows once a custom domain is connected",
+        "Add real-time updates using WebSockets",
+        "Add notifications and activity feed",
+        "Improve caching strategies",
+        "Add user profiles and media uploads"
+      ]
+    },
+    "konektaBackend": {
+      "title": "Konekta Social Backend",
+      "shortDescription": "A fully custom backend API built with Fastify, TypeScript, Prisma, and PostgreSQL to power the Konekta Social platform.",
+      "overview": "Konekta Backend is the server-side foundation of the Konekta Social platform. I built it using a hands-on, iterative approach—experimenting, breaking things, fixing them, and learning backend engineering concepts through real practice. Throughout the process, I used AI as a learning partner to understand backend patterns, improve my prompting skills, and explore how production-grade APIs are designed.\nThis project taught me how backend and frontend engineers collaborate through schemas, contracts, and predictable error structures. I learned how to design Prisma schemas, validate data with Zod, structure Fastify routes, and build a clean API that is easy for frontend developers to consume. The experience gave me a strong understanding of how backend logic works, why certain patterns exist, and how to design scalable, maintainable APIs.\nI also gained practical experience with deployment environments such as Railway, Render, and Vercel, learning how dev and prod differ in terms of cookies, CORS, headers, cold starts, and request lifecycles. These lessons helped me build a backend that behaves more like a real business-grade system rather than a simple demo.",
+      "features": [
+        "User authentication with JWT",
+        "Email confirmation, password reset, and magic link logic (backend implemented)",
+        "Post CRUD",
+        "Comment CRUD",
+        "Like / Unlike posts and comments",
+        "Protected routes with authorization middleware",
+        "Zod-based request validation",
+        "Prisma ORM with PostgreSQL",
+        "Consistent, normalized error responses",
+        "Typed API responses for frontend integration"
+      ],
+      "techStack": {
+        "backend": [
+          "Node.js",
+          "Fastify",
+          "TypeScript",
+          "Prisma ORM",
+          "PostgreSQL",
+          "Zod validation",
+          "JWT authentication"
+        ],
+        "tools": ["Axios (frontend consumption)", "Postman", "Railway CLI"],
+        "deployment": [
+          "Railway (backend + database)",
+          "Render (testing)",
+          "Vercel (frontend integration)"
+        ]
+      },
+      "architecture": {
+        "apiDesign": "Modular Fastify route structure with controllers, services, and validation layers. Each endpoint follows a predictable pattern: validate → authorize → execute → respond. Errors follow a normalized shape to simplify frontend handling.",
+        "database": "Prisma schema includes users, posts, comments, likes, tokens, and sessions. Relations are designed to support scalable social interactions and efficient querying.",
+        "auth": "JWT-based authentication with refresh tokens, secure cookie handling, and environment-based cookie configuration for dev vs prod."
+      },
+      "challenges": [
+        "Understanding how backend routing, validation, and controllers work together",
+        "Learning Prisma schema design and relational modeling",
+        "Handling HTTP-only cookies differently in dev vs prod",
+        "Normalizing error shapes for predictable frontend consumption",
+        "Debugging CORS, headers, and cookie issues across Railway, Render, and Vercel",
+        "Designing APIs that feel natural for frontend developers"
+      ],
+      "solutions": [
+        "Used Fastify's plugin system to structure routes cleanly",
+        "Designed Prisma schemas through iterative modeling and testing",
+        "Implemented environment-based cookie configuration for dev/prod",
+        "Created a unified error response format for Axios",
+        "Tested deployments across Railway, Render, and Vercel to understand differences",
+        "Documented API behavior using Postman for easier frontend integration"
+      ],
+      "learnedAspects": [
+        "How backend architecture is engineered in real-world systems",
+        "How to design Prisma schemas and relational models",
+        "How to validate requests using Zod",
+        "How to structure Fastify routes and plugins",
+        "How HTTP-only cookies behave differently in dev vs prod",
+        "How to normalize backend error shapes for frontend clarity",
+        "How Railway, Render, and Vercel differ in deployment behavior",
+        "How to build APIs that feel intuitive for frontend developers",
+        "How to debug CORS, cookies, and headers across environments",
+        "How to think like both a frontend and backend engineer"
+      ],
+      "limitations": [
+        "Email flows cannot run in production due to Railway free tier SMTP restrictions",
+        "Backend may sleep or become unavailable due to free tier limits",
+        "Some advanced auth flows are implemented but not active in production"
+      ],
+      "futureImprovements": [
+        "Add rate limiting and security hardening",
+        "Add WebSocket support for real-time updates",
+        "Add admin dashboard and analytics",
+        "Improve logging and monitoring",
+        "Add automated tests for routes and services"
+      ]
+    },
+    "theDeal": {
+      "title": "TheDeal",
+      "shortDescription": "A real-world, production-grade Next.js project built collaboratively with a senior frontend mentor, focusing on SEO, localization, UI engineering, and server-side rendering.",
+      "overview": "TheDeal was a major opportunity for me to work on a real-world, business-oriented project under the guidance of a senior frontend developer who also acted as a mentor. This experience exposed me to professional development workflows, production standards, and the expectations of high-quality frontend engineering.\n\nThe project is fully server-side rendered, which allowed me to discover the true power of Next.js and TypeScript in a real production environment. I contributed three of the main seven pages—Home, Projects, and Podcasts—along with two additional subpages inside the Projects section. Working on these pages helped me understand how to build scalable layouts, reusable UI patterns, and maintainable code structures.\n\nOne of the most valuable parts of this project was learning SEO fundamentals. I worked with structured data schemas, metadata optimization, and SEO testing after deployment. I also delivered a fully localized UI, ensuring both Arabic and English versions were polished and consistent.\n\nTheDeal also gave me hands-on experience integrating with a real API built by an experienced backend engineer. I implemented carousels, animated UI components, forms, and dynamic content, all while maintaining accessibility and performance. This project significantly boosted my confidence and made me even more eager to take on larger, more complex challenges.",
+      "features": [
+        "Fully server-side rendered pages using Next.js",
+        "Three main pages built: Home, Projects, Podcasts",
+        "Two additional subpages inside the Projects section",
+        "Full localization (Arabic + English)",
+        "SEO optimization using structured data schemas",
+        "Integration with a real backend API",
+        "Animated UI using Framer Motion",
+        "Custom carousels and dynamic content sections",
+        "Forms built with React Hook Form",
+        "Responsive and accessible UI using TailwindCSS and shadcn/ui"
+      ],
+      "techStack": {
+        "frontend": [
+          "Next.js (App Router)",
+          "React",
+          "TypeScript",
+          "TailwindCSS",
+          "Radix UI",
+          "shadcn/ui",
+          "Framer Motion",
+          "React Hook Form"
+        ],
+        "tools": ["SEO testing tools", "Structured data validators", "Vercel"],
+        "deployment": ["Vercel (production hosting)"]
+      },
+      "architecture": {
+        "rendering": "The project is fully server-side rendered, leveraging Next.js App Router for dynamic routing, metadata generation, and SEO optimization. Server components were used where possible to improve performance and reduce bundle size.",
+        "localization": "Full bilingual support (Arabic and English) with a clean dictionary structure and dynamic routing based on language. All UI components were built with RTL/LTR awareness.",
+        "apiIntegration": "Connected to a real backend API built by an experienced backend engineer. Implemented data fetching, caching strategies, and error handling patterns suitable for production."
+      },
+      "challenges": [
+        "Understanding server-side rendering and how it differs from client-side rendering",
+        "Learning SEO fundamentals and applying structured data schemas",
+        "Building fully localized UI with RTL support",
+        "Integrating with a real backend API",
+        "Creating animated UI components and carousels",
+        "Working under real-world expectations and deadlines"
+      ],
+      "solutions": [
+        "Used Next.js server components and metadata APIs to optimize SSR",
+        "Implemented JSON-LD schemas and validated them with SEO tools",
+        "Built reusable localization-aware components",
+        "Collaborated closely with the backend engineer to understand API contracts",
+        "Used Framer Motion to create smooth, production-ready animations",
+        "Followed professional coding standards guided by my mentor"
+      ],
+      "learnedAspects": [
+        "How real-world frontend teams structure and ship production features",
+        "How SSR improves SEO, performance, and user experience",
+        "How to implement structured data schemas for SEO",
+        "How to build scalable, localized UI systems",
+        "How to collaborate with backend engineers using clear API contracts",
+        "How to design carousels, animations, and dynamic sections",
+        "How to test SEO after deployment and validate schema correctness",
+        "How to work in a professional environment with guidance from a senior developer"
+      ],
+      "limitations": [
+        "Some backend features were still under development during integration",
+        "Certain pages depended on API updates that were delivered iteratively"
+      ],
+      "futureImprovements": [
+        "Add more dynamic content sections",
+        "Improve caching and revalidation strategies",
+        "Expand SEO coverage with more structured data types",
+        "Add more animations and micro-interactions"
+      ]
+    },
+    "portfolio": {
+      "title": "Personal Portfolio",
+      "shortDescription": "A modern, fully localized, theme-aware developer portfolio showcasing my skills, projects, and engineering philosophy using the latest frontend technologies.",
+      "overview": "This portfolio is the most recent and complete project I've built, combining everything I've learned across frontend engineering, UI design, and modern web development. It uses a fully modern tech stack and represents exactly how a professional portfolio should look and feel.\n\nThe project includes five main pages and two subpages, each designed with clean structure, smooth animations, and a strong focus on accessibility and performance. It is fully localized in Arabic and English, theme-aware, and built with reusable components that follow scalable architectural patterns.\n\nThis portfolio reflects my personal engineering philosophy: clarity, maintainability, and attention to detail. It is the project I am most confident about, and it demonstrates my ability to build polished, production-ready interfaces using modern tools and best practices.",
+      "features": [
+        "Five main pages and two subpages",
+        "Fully localized (Arabic + English)",
+        "Light and dark theme support",
+        "Smooth animations using Framer Motion",
+        "Reusable UI components with shadcn/ui",
+        "Responsive design across all devices",
+        "SEO-friendly structure",
+        "Modern layout and navigation patterns",
+        "Clean code architecture with TypeScript"
+      ],
+      "techStack": {
+        "frontend": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "TailwindCSS",
+          "Framer Motion",
+          "shadcn/ui",
+          "next-themes"
+        ],
+        "tools": ["Vercel", "ESLint", "Prettier"],
+        "deployment": ["Vercel (production hosting)"]
+      },
+      "architecture": {
+        "rendering": "Built using Next.js App Router with a mix of server and client components. Pages are structured for clarity, scalability, and SEO optimization. Animations are handled with Framer Motion for smooth, modern transitions.",
+        "localization": "Full bilingual support (Arabic and English) with dynamic routing, dictionary-based translations, and RTL/LTR awareness across all components.",
+        "theming": "Theme switching implemented using next-themes with persistent user preference and full dark/light UI support."
+      },
+      "challenges": [
+        "Designing a clean and scalable architecture for multiple pages",
+        "Ensuring full localization with RTL support",
+        "Building smooth animations without hurting performance",
+        "Creating reusable UI components with shadcn/ui",
+        "Balancing aesthetics with accessibility and readability"
+      ],
+      "solutions": [
+        "Used a modular folder structure with reusable components",
+        "Implemented a dictionary-based i18n system",
+        "Optimized animations using Framer Motion best practices",
+        "Built a consistent UI system using TailwindCSS and shadcn/ui",
+        "Applied accessibility guidelines for typography and contrast"
+      ],
+      "learnedAspects": [
+        "How to design a complete, production-ready portfolio",
+        "How to structure multi-page applications with App Router",
+        "How to build scalable UI systems with reusable components",
+        "How to implement full localization and RTL support",
+        "How to balance design, performance, and accessibility",
+        "How to express engineering identity through UI and structure"
+      ],
+      "limitations": [
+        "Some animations may vary slightly across older mobile devices",
+        "Future sections may be added as my experience grows"
+      ],
+      "futureImprovements": [
+        "Add a blog section with MDX",
+        "Add OpenGraph images for all pages",
+        "Add more interactive UI elements and micro-interactions",
+        "Improve SEO with additional structured data"
+      ]
+    },
+    "reactTodo": {
+      "title": "React Todo App",
+      "shortDescription": "A simple React-based todo application that represents the starting point of my frontend journey and the foundation of everything I've built since.",
+      "overview": "This project marks the very beginning of my React journey. It was the first real application I built while learning the fundamentals of components, state management, props, and rendering. I chose to keep this project in my portfolio because it reminds me of where I started and how far I've come.\n\nThe React Todo App represents the early stages of my growth—experimenting with React, understanding how UI updates work, and learning how to structure small applications. It also helped me get comfortable with Vite, Material UI, and the basics of modern frontend tooling. Keeping this project visible is my way of appreciating the journey, staying humble, and staying motivated to keep improving every day.",
+      "features": [
+        "Add, edit, and delete tasks",
+        "Basic state management using React hooks",
+        "Responsive UI using Material UI",
+        "Fast development environment powered by Vite",
+        "Simple, clean component structure"
+      ],
+      "techStack": {
+        "frontend": ["React", "Vite", "Material UI (MUI)"],
+        "tools": ["ESLint", "Prettier"],
+        "deployment": ["GitHub Pages"]
+      },
+      "architecture": {
+        "structure": "Simple React component hierarchy with App component managing state and child components for UI rendering.",
+        "styling": "Material UI components and styling system for consistent UI design."
+      },
+      "challenges": [
+        "Understanding how React components work together",
+        "Learning state and props for the first time",
+        "Structuring a small app in a clean and readable way"
+      ],
+      "solutions": [
+        "Practiced building small components and combining them",
+        "Used React hooks to manage state and UI updates",
+        "Followed Material UI patterns to learn consistent UI design"
+      ],
+      "learnedAspects": [
+        "React fundamentals: components, props, and state",
+        "How to structure small applications",
+        "How to use Vite for fast development",
+        "How to build UI with Material UI",
+        "The importance of appreciating early projects as part of the journey"
+      ],
+      "limitations": [
+        "Simple functionality compared to my newer projects",
+        "No backend or persistent storage"
+      ],
+      "futureImprovements": ["Add animations and improved UI"]
+    },
+    "hairDayWebsite": {
+      "title": "HairDay Website",
+      "shortDescription": "A simple HTML and CSS project that marks the early stages of my web development journey and reminds me how far I've grown.",
+      "overview": "HairDay is one of the very first projects I built using only HTML and CSS. Just like my React Todo App, this project represents an important milestone in my learning journey. It reminds me of the early days when everything was new, challenging, and exciting. I keep this project in my portfolio not because of its complexity, but because of what it symbolizes—growth, persistence, and the willingness to start from zero.\n\nWorking on HairDay taught me the fundamentals of layout, styling, responsiveness, and structuring a clean HTML document. It also helped me appreciate the importance of design, spacing, and visual hierarchy long before I learned modern frameworks. I am grateful for this project because it marks the beginning of a journey that has taken me through React, Next.js, TypeScript, backend development, and full-stack engineering. It reminds me to stay humble, stay thankful, and keep moving forward.",
+      "features": [
+        "Static multi-section layout",
+        "Responsive design using pure CSS",
+        "Clean HTML structure",
+        "Basic styling and layout techniques",
+        "Simple, beginner-friendly UI"
+      ],
+      "techStack": {
+        "frontend": ["HTML", "CSS"],
+        "tools": ["GitHub Pages"],
+        "deployment": ["GitHub Pages (static hosting)"]
+      },
+      "architecture": {
+        "htmlStructure": "Semantic HTML5 elements for clean document structure.",
+        "cssLayout": "CSS Flexbox for layout and basic responsive design principles."
+      },
+      "challenges": [
+        "Learning how to structure HTML for the first time",
+        "Understanding CSS layout and spacing",
+        "Building a visually consistent page without frameworks"
+      ],
+      "solutions": [
+        "Practiced writing semantic HTML",
+        "Used CSS flexbox and basic layout techniques",
+        "Experimented with colors, spacing, and typography"
+      ],
+      "learnedAspects": [
+        "How to structure a webpage from scratch",
+        "How CSS affects layout and design",
+        "How to think visually and build UI step by step",
+        "The importance of early projects in long-term growth",
+        "How small beginnings lead to bigger achievements"
+      ],
+      "limitations": [
+        "Simple static design with no interactivity",
+        "No responsiveness beyond basic CSS"
+      ],
+      "futureImprovements": [
+        "Add responsive breakpoints",
+        "Improve layout and spacing",
+        "Add animations or transitions"
+      ]
+    }
   }
 }

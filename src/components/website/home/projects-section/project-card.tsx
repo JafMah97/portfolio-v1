@@ -13,11 +13,10 @@ interface ProjectCardProps {
     githubLink: string;
     demoLink: string;
     technologies: string[];
-    cardLink:string;
+    cardLink: string;
   };
   index: number;
   lang: Lang;
-  
 }
 
 export default async function ProjectCard({
@@ -82,10 +81,9 @@ export default async function ProjectCard({
         <CardContent className="p-6 flex flex-col grow relative z-10">
           <Link href={project.cardLink}>
             <div className="mb-3">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
                 {project.title}
               </h3>
-              <div className="w-12 h-1 bg-linear-to-r from-blue-500 to-purple-500 rounded-full mt-2 group-hover:w-20 transition-all duration-500" />
             </div>
 
             <p className="text-gray-600 dark:text-gray-300 line-clamp-3 mb-6">

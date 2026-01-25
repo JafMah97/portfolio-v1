@@ -36,32 +36,32 @@ export default async function ProjectsHeroSection({ lang }: { lang: Lang }) {
   ];
 
   return (
-    <section className="relative backdrop-blur-2xl overflow-hidden w-full z-20 bg-primary/10 h-screen flex items-center">
+    <section className="relative backdrop-blur-2xl  w-full z-20 bg-primary/10 min-h-screen flex items-center">
       <AboutHeroDecoration />
 
       <div className="container max-w-6xl mx-auto h-full">
         <div className="relative z-50 flex flex-col justify-center h-full items-center gap-5 px-4 md:px-6">
           {/* Title */}
-          <MotionWrapper
+           <MotionWrapper
             as="h1"
             fadeUp
             delay={0.1}
             className="text-5xl md:text-6xl font-bold text-center mb-6"
           >
             <ShinyText text={dict.title} />
-          </MotionWrapper>
+          </MotionWrapper> 
 
           {/* Subtitle */}
-          <MotionWrapper
+           <MotionWrapper
             fadeUp
             delay={0.2}
             className="max-w-3xl mx-auto text-center text-[16px] md:text-lg mb-5 md:mb-16 md:leading-relaxed"
           >
             <p>{dict.subtitle}</p>
-          </MotionWrapper>
+          </MotionWrapper> 
 
           {/* Technology Cards */}
-          <MotionWrapper
+           <MotionWrapper
             fadeUp
             delay={0.4}
             className="w-full max-w-4xl mx-auto"
@@ -87,7 +87,7 @@ export default async function ProjectsHeroSection({ lang }: { lang: Lang }) {
                 </div>
               ))}
             </div>
-          </MotionWrapper>
+          </MotionWrapper> 
         </div>
       </div>
     </section>
