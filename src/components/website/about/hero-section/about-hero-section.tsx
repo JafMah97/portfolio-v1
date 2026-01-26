@@ -1,39 +1,38 @@
 import { getDictionary, Lang } from "@/utils/translations/dictionary-utils";
-import AboutHeroDecoration from "./hero-decorations";
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 import ShinyText from "@/components/custom/motion/text-shine";
 import { Award, Rocket, ToolCase } from "lucide-react";
 import AboutHeroCard from "./hero-card";
+import HeroDecoration from "@/components/custom/layout/hero-decoration";
 
 export default async function AboutHero({ lang }: { lang: Lang }) {
-  const dict = ((await getDictionary(lang)).aboutPage.hero)
+  const dict = (await getDictionary(lang)).aboutPage.hero;
   const CardsData = [
     {
       label: dict.cards.projects,
       value: "4+",
       icon: <Rocket className="w-5 h-5 md:w-6 md:h-6" />,
-      link:`/${lang}/projects`
-
+      link: `/${lang}/projects`,
     },
     {
       label: dict.cards.technologies,
       value: "20+",
       icon: <ToolCase className="w-5 h-5 md:w-6 md:h-6" />,
-      link:"#tech"
-
+      link: "#tech",
     },
     {
       label: dict.cards.years,
       value: "2+",
       icon: <Award className="w-5 h-5 md:w-6 md:h-6" />,
-      link:"#journey"
+      link: "#journey",
     },
   ];
 
   return (
     <section className="relative backdrop-blur-2xl overflow-hidden w-full z-20 bg-primary/10 h-screen flex items-center">
-      <AboutHeroDecoration />
+      <HeroDecoration />
       
+
       <div className="container max-w-6xl mx-auto h-full">
         <div className=" relative z-50 flex flex-col justify-center h-full items-center gap-5 px-4 md:px-6">
           {/* Title */}

@@ -1,12 +1,12 @@
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 import { getDictionary, Lang } from "@/utils/translations/dictionary-utils";
-import {  Brain, Lightbulb, TrendingUp,  } from "lucide-react";
-import AboutDecoration from "../../home/about-section/about-decoration";
+import { Brain, Lightbulb, TrendingUp } from "lucide-react";
+import AboutDecoration from "../../home/home-about-section/home-about-decoration";
 import ShinyText from "@/components/custom/motion/text-shine";
 import PhilosophyCard, { PhilosophyCardProps } from "./philosophy-card";
 
 export default async function PhilosophySection({ lang }: { lang: Lang }) {
-  const dict = (await getDictionary(lang)).aboutPage.philosophy
+  const dict = (await getDictionary(lang)).aboutPage.philosophy;
   const approachData: PhilosophyCardProps[] = [
     {
       title: dict.cards.problemFirst.title,
@@ -47,9 +47,7 @@ export default async function PhilosophySection({ lang }: { lang: Lang }) {
           delay={0.2}
           className="max-w-3xl mx-auto text-center text-[16px] md:text-lg text-muted-foreground mb-5 md:mb-12 md:leading-relaxed"
         >
-          <p>
-            {dict.subtitle}
-          </p>
+          <p>{dict.subtitle}</p>
         </MotionWrapper>
 
         <div className="container max-w-7xl mx-auto px-4 py-4 relative">

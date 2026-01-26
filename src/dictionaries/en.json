@@ -18,6 +18,20 @@
     "theme": "Toggle Theme",
     "setting": "Setting"
   },
+  "loadingPage":{
+    "loading":"loading"
+  },
+  "notFoundPage": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist or may have been moved.",
+    "goHome": "Go Back Home"
+  },
+  "errorPage": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. You can try again or return to the homepage.",
+    "tryAgain": "Try Again",
+    "goHome": "Go Home"
+  },
   "homePage": {
     "heroSection": {
       "title": "Hi I'm Jafar ",
@@ -268,36 +282,15 @@
       "projectDescription": "Have a project in mind? I'm ready to bring your ideas to life with cutting-edge solutions and creative expertise."
     }
   },
+  "projectPage": {
+    "hero": {
+      "links": {}
+    }
+  },
   "projects": {
     "konektaSocial": {
       "title": "Konekta Social",
-      "description": "Konekta Social is a modern social media platform built as a fully responsive frontend experience. It focuses on clean UI, fast interactions, and a smooth multilingual user journey."
-    },
-    "konektaBackend": {
-      "title": "Konekta Backend",
-      "description": "A scalable backend built with Fastify, TypeScript, Prisma, and PostgreSQL, designed for high‑performance APIs and real‑time features. It includes robust authentication, validation, and modular architecture for future growth."
-    },
-    "theDeal": {
-      "title": "TheDeal",
-      "description": "A freelance project built in collaboration with a senior developer. I contributed to the Home page, Projects page, and Podcast page, focusing on clean UI, accessibility, and responsive design. The platform enables users to post job offers, apply for jobs, list projects for sale or scaling, and create role profiles to get hired."
-    },
-    "portfolio": {
-      "title": "Portfolio",
-      "description": "This personal portfolio website presents my work through a clean, structured layout that highlights selected projects, technical strengths, and development approach. It reflects my focus on clarity, scalability, and thoughtful engineering, offering a concise overview of my experience and the way I build digital products."
-    },
-    "hairday": {
-      "title": "HairDay Salon",
-      "description": "HairDay Salon is a simple landing page built using only HTML and CSS as a practice project. The goal was to focus on clean structure, semantic markup, and responsive styling without relying on frameworks."
-    },
-    "reactTodo": {
-      "title": "Simple React Todo App",
-      "description": "A simple React practice project focused on building a clean and functional todo application. It includes basic CRUD operations, state management, and a straightforward UI to reinforce core React concepts."
-    }
-  },
-  "detailedProject": {
-    "konektaSocial": {
-      "title": "Konekta Social",
-      "shortDescription": "A full‑stack social platform built to master modern frontend engineering while designing a complete backend API from scratch.",
+      "description": "Konekta Social is a modern social media platform built as a fully responsive frontend experience. It focuses on clean UI, fast interactions, and a smooth multilingual user journey.",
       "overview": "Konekta Social is a full‑stack project I built to deepen my understanding of modern frontend engineering while also challenging myself to design and implement a complete backend API. Since no free API offered all the features I needed in one place, I decided to build both sides of the application myself.The project uses a modern, in‑demand tech stack across both frontend and backend. I implemented a full authentication system (email confirmation, password reset, magic links, secure login/logout), although the UI flows are not active in production because email APIs require a live domain and SMTP is blocked on free hosting tiers.Despite those limitations, the entire system is fully implemented in code and demonstrates real‑world architecture, protected routes, optimistic UI updates, and multilingual support (Arabic + English).",
       "features": [
         "User authentication (login, logout, JWT-based sessions)",
@@ -383,8 +376,8 @@
       ]
     },
     "konektaBackend": {
-      "title": "Konekta Social Backend",
-      "shortDescription": "A fully custom backend API built with Fastify, TypeScript, Prisma, and PostgreSQL to power the Konekta Social platform.",
+      "title": "Konekta Backend",
+      "description": "A scalable backend built with Fastify, TypeScript, Prisma, and PostgreSQL, designed for high‑performance APIs and real‑time features. It includes robust authentication, validation, and modular architecture for future growth.",
       "overview": "Konekta Backend is the server-side foundation of the Konekta Social platform. I built it using a hands-on, iterative approach—experimenting, breaking things, fixing them, and learning backend engineering concepts through real practice. Throughout the process, I used AI as a learning partner to understand backend patterns, improve my prompting skills, and explore how production-grade APIs are designed.\nThis project taught me how backend and frontend engineers collaborate through schemas, contracts, and predictable error structures. I learned how to design Prisma schemas, validate data with Zod, structure Fastify routes, and build a clean API that is easy for frontend developers to consume. The experience gave me a strong understanding of how backend logic works, why certain patterns exist, and how to design scalable, maintainable APIs.\nI also gained practical experience with deployment environments such as Railway, Render, and Vercel, learning how dev and prod differ in terms of cookies, CORS, headers, cold starts, and request lifecycles. These lessons helped me build a backend that behaves more like a real business-grade system rather than a simple demo.",
       "features": [
         "User authentication with JWT",
@@ -463,7 +456,7 @@
     },
     "theDeal": {
       "title": "TheDeal",
-      "shortDescription": "A real-world, production-grade Next.js project built collaboratively with a senior frontend mentor, focusing on SEO, localization, UI engineering, and server-side rendering.",
+      "description": "A freelance project built in collaboration with a senior developer. I contributed to the Home page, Projects page, and Podcast page, focusing on clean UI, accessibility, and responsive design. The platform enables users to post job offers, apply for jobs, list projects for sale or scaling, and create role profiles to get hired.",
       "overview": "TheDeal was a major opportunity for me to work on a real-world, business-oriented project under the guidance of a senior frontend developer who also acted as a mentor. This experience exposed me to professional development workflows, production standards, and the expectations of high-quality frontend engineering.\n\nThe project is fully server-side rendered, which allowed me to discover the true power of Next.js and TypeScript in a real production environment. I contributed three of the main seven pages—Home, Projects, and Podcasts—along with two additional subpages inside the Projects section. Working on these pages helped me understand how to build scalable layouts, reusable UI patterns, and maintainable code structures.\n\nOne of the most valuable parts of this project was learning SEO fundamentals. I worked with structured data schemas, metadata optimization, and SEO testing after deployment. I also delivered a fully localized UI, ensuring both Arabic and English versions were polished and consistent.\n\nTheDeal also gave me hands-on experience integrating with a real API built by an experienced backend engineer. I implemented carousels, animated UI components, forms, and dynamic content, all while maintaining accessibility and performance. This project significantly boosted my confidence and made me even more eager to take on larger, more complex challenges.",
       "features": [
         "Fully server-side rendered pages using Next.js",
@@ -534,8 +527,8 @@
       ]
     },
     "portfolio": {
-      "title": "Personal Portfolio",
-      "shortDescription": "A modern, fully localized, theme-aware developer portfolio showcasing my skills, projects, and engineering philosophy using the latest frontend technologies.",
+      "title": "Portfolio",
+      "description": "This personal portfolio website presents my work through a clean, structured layout that highlights selected projects, technical strengths, and development approach. It reflects my focus on clarity, scalability, and thoughtful engineering, offering a concise overview of my experience and the way I build digital products.",
       "overview": "This portfolio is the most recent and complete project I've built, combining everything I've learned across frontend engineering, UI design, and modern web development. It uses a fully modern tech stack and represents exactly how a professional portfolio should look and feel.\n\nThe project includes five main pages and two subpages, each designed with clean structure, smooth animations, and a strong focus on accessibility and performance. It is fully localized in Arabic and English, theme-aware, and built with reusable components that follow scalable architectural patterns.\n\nThis portfolio reflects my personal engineering philosophy: clarity, maintainability, and attention to detail. It is the project I am most confident about, and it demonstrates my ability to build polished, production-ready interfaces using modern tools and best practices.",
       "features": [
         "Five main pages and two subpages",
@@ -600,8 +593,8 @@
       ]
     },
     "reactTodo": {
-      "title": "React Todo App",
-      "shortDescription": "A simple React-based todo application that represents the starting point of my frontend journey and the foundation of everything I've built since.",
+      "title": "Simple React Todo App",
+      "description": "A simple React practice project focused on building a clean and functional todo application. It includes basic CRUD operations, state management, and a straightforward UI to reinforce core React concepts.",
       "overview": "This project marks the very beginning of my React journey. It was the first real application I built while learning the fundamentals of components, state management, props, and rendering. I chose to keep this project in my portfolio because it reminds me of where I started and how far I've come.\n\nThe React Todo App represents the early stages of my growth—experimenting with React, understanding how UI updates work, and learning how to structure small applications. It also helped me get comfortable with Vite, Material UI, and the basics of modern frontend tooling. Keeping this project visible is my way of appreciating the journey, staying humble, and staying motivated to keep improving every day.",
       "features": [
         "Add, edit, and delete tasks",
@@ -643,8 +636,8 @@
       "futureImprovements": ["Add animations and improved UI"]
     },
     "hairDayWebsite": {
-      "title": "HairDay Website",
-      "shortDescription": "A simple HTML and CSS project that marks the early stages of my web development journey and reminds me how far I've grown.",
+      "title": "HairDay Salon",
+      "description": "HairDay Salon is a simple landing page built using only HTML and CSS as a practice project. The goal was to focus on clean structure, semantic markup, and responsive styling without relying on frameworks.",
       "overview": "HairDay is one of the very first projects I built using only HTML and CSS. Just like my React Todo App, this project represents an important milestone in my learning journey. It reminds me of the early days when everything was new, challenging, and exciting. I keep this project in my portfolio not because of its complexity, but because of what it symbolizes—growth, persistence, and the willingness to start from zero.\n\nWorking on HairDay taught me the fundamentals of layout, styling, responsiveness, and structuring a clean HTML document. It also helped me appreciate the importance of design, spacing, and visual hierarchy long before I learned modern frameworks. I am grateful for this project because it marks the beginning of a journey that has taken me through React, Next.js, TypeScript, backend development, and full-stack engineering. It reminds me to stay humble, stay thankful, and keep moving forward.",
       "features": [
         "Static multi-section layout",

@@ -1,8 +1,8 @@
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 import { getDictionary, Lang } from "@/utils/translations/dictionary-utils";
-import ProjectCard from "../../home/projects-section/project-card";
+import ProjectCard from "../../../custom/layout/project-card";
 import ProjectsWrapper from "./projects-wrapper";
-import projectsData, { Project } from "@/constants/projects-data";
+import  { Project ,projects } from "@/constants/projects-data";
 
 export default async function MainProjectsSection({
   lang,
@@ -12,13 +12,13 @@ export default async function MainProjectsSection({
   searchParams?: { q?: string };
 }) {
   const query = (searchParams?.q || "").toLowerCase();
-  const projects: Project[] = await projectsData(lang);
+  const data: Project[] = await projects(lang);
 
   const sub = (await getDictionary(lang)).projectsPage.main.subtitle;
 
-  const filteredProjects = projects.filter((p) => {
+  const filteredProjects = data.filter((p) => {
     const text =
-      `${p.title} ${p.description} ${p.technologies.join(" ")}`.toLowerCase();
+      `${p.title} ${p.description} ${p.techStack.frontend?.join(" ")} ${p.techStack.backend?.join(" ")} ${p.techStack.deployment?.join(" ")} ${p.techStack.tools?.join(" ")}`.toLowerCase();
     return text.includes(query);
   });
 
@@ -41,9 +41,7 @@ export default async function MainProjectsSection({
         >
           {filteredProjects.map((p, index) => {
             return (
-              
-                <ProjectCard key={index} index={index} project={p} lang={lang} />
-              
+              <ProjectCard key={index} index={index} project={p} lang={lang} />
             );
           })}
         </ProjectsWrapper>

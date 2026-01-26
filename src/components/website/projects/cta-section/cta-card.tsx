@@ -1,12 +1,11 @@
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 import { Card, CardContent } from "@/components/ui/card";
-import SkillCardDecoration from "../../home/about-section/skill-card-decoration";
+import SkillCardDecoration from "../../home/home-about-section/home-skill-card-decoration";
 import { Lang } from "@/utils/translations/dictionary-utils";
 import { Mail, ArrowRight, Sparkles, Target, Zap } from "lucide-react";
 import CustomButton from "@/components/custom/layout/custom-button";
 
 export default function CtaCard({ lang }: { lang: Lang }) {
-  
   const content = {
     title: "Let's Build Something Amazing Together",
     description:

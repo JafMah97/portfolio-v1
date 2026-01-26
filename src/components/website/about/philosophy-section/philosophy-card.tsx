@@ -1,10 +1,8 @@
-
-
 import { Card, CardContent } from "@/components/ui/card";
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 import { LucideIcon } from "lucide-react";
 import { IconType } from "react-icons";
-import SkillCardDecoration from "../../home/about-section/skill-card-decoration";
+import SkillCardDecoration from "../../home/home-about-section/home-skill-card-decoration";
 
 export interface PhilosophyCardProps {
   title: string;
@@ -34,12 +32,17 @@ export default function PhilosophyCard({
     green: "from-green-500/20 via-emerald-500/20 to-green-500/20",
   };
 
-  const col = color !== "blue" ? color !== "purple" ? "text-green-500" : "text-purple-500":"text-blue-500"
+  const col =
+    color !== "blue"
+      ? color !== "purple"
+        ? "text-green-500"
+        : "text-purple-500"
+      : "text-blue-500";
 
   return (
     <MotionWrapper
       fadeUp
-      delay={  0.1}
+      delay={0.1}
       whileHover={{ scale: 1.03, rotateX: 1, rotateY: 1 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
       className="relative group h-full"
@@ -64,9 +67,7 @@ export default function PhilosophyCard({
 
             {/* Icon container */}
             <div className="relative w-16 h-16 flex items-center justify-center rounded-2xl bg-linear-to-br from-white to-white/80 dark:from-gray-800 dark:to-gray-700 border border-white/50 dark:border-gray-600/50 shadow-xl group-hover:rotate-6 transition-transform duration-300">
-              <Icon
-                className={`w-8 h-8 ${col}`}
-              />
+              <Icon className={`w-8 h-8 ${col}`} />
             </div>
           </div>
 
