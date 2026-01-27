@@ -4,20 +4,19 @@ import { LucideIcon } from "lucide-react";
 import { IconType } from "react-icons";
 import SkillCardDecoration from "../../home/home-about-section/home-skill-card-decoration";
 
-export interface PhilosophyCardProps {
+export interface AboutPhilosophyCardProps {
   title: string;
   description: string;
   icon: IconType | LucideIcon;
   color: "blue" | "purple" | "green";
 }
 
-export default function PhilosophyCard({
+export default function AboutPhilosophyCard({
   title,
   description,
   icon: Icon,
   color,
-}: PhilosophyCardProps) {
-  // Mapping colors for dynamic styling
+}: AboutPhilosophyCardProps) {
   const colorVariants = {
     blue: "from-blue-600 via-blue-500 to-cyan-400 shadow-blue-500/20 group-hover:bg-blue-500/30",
     purple:

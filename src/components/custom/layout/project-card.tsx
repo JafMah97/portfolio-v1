@@ -104,14 +104,24 @@ export default async function ProjectCard({
               </div>
 
               <div className="flex flex-wrap gap-2">
-                {frontend.slice(0, 4).map((tech, i) => (
+
+                {frontend.length > 0 ?
+                frontend.slice(0, 4).map((tech, i) => (
                   <span
                     key={i}
                     className="px-2.5 py-1 text-[11px] font-medium rounded-md bg-blue-500/5 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/10"
                   >
                     {tech}
                   </span>
-                ))}
+                ))
+                : backend.slice(0, 4).map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-2.5 py-1 text-[11px] font-medium rounded-md bg-blue-500/5 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/10"
+                  >
+                    {tech}
+                  </span>))
+              }
 
                 {remaining > 0 && (
                   <span className="px-2.5 py-1 text-[11px] font-medium rounded-md bg-gray-500/5 text-gray-500 border border-gray-500/10">

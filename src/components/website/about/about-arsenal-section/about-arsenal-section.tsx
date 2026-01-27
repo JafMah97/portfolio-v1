@@ -27,9 +27,9 @@ import {
   SiAxios,
 } from "react-icons/si";
 import { RiToolsFill } from "react-icons/ri";
-import ArsenalCard from "./arsenal-card";
+import AboutArsenalCard from "./about-arsenal-card";
 
-export default async function ArsenalSection({ lang }: { lang: Lang }) {
+export default async function AboutArsenalSection({ lang }: { lang: Lang }) {
   const dict = (await getDictionary(lang)).aboutPage.arsenal
   // Group skills by category
   const skillCategories = [
@@ -96,7 +96,10 @@ export default async function ArsenalSection({ lang }: { lang: Lang }) {
 
 
   return (
-    <section id={"tech"} className="relative py-10 backdrop-blur-2xl overflow-hidden w-full z-20 bg-primary/10 min-h-screen flex items-center">
+    <section
+      id={"tech"}
+      className="relative py-24 backdrop-blur-2xl overflow-hidden w-full z-20 bg-primary/10 min-h-screen flex items-center"
+    >
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
@@ -121,17 +124,15 @@ export default async function ArsenalSection({ lang }: { lang: Lang }) {
             className="max-w-3xl mx-auto text-center text-[16px] md:text-lg text-muted-foreground mb-5 md:mb-12 md:leading-relaxed"
           >
             {" "}
-            <p>
-              {dict.subtitle}
-            </p>
+            <p>{dict.subtitle}</p>
           </MotionWrapper>
         </div>
 
-        {/* Skill Categories - Interactive Grid */}
+        {/* Skill Categories */}
         <MotionWrapper fadeUp delay={0.3} className="mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {skillCategories.map((category, categoryIdx) => (
-              <ArsenalCard
+              <AboutArsenalCard
                 category={category}
                 key={categoryIdx}
                 index={categoryIdx}
@@ -139,8 +140,6 @@ export default async function ArsenalSection({ lang }: { lang: Lang }) {
             ))}
           </div>
         </MotionWrapper>
-
-        
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ import ProjectCard from "../../../custom/layout/project-card";
 import ProjectsWrapper from "./projects-wrapper";
 import  { Project ,projects } from "@/constants/projects-data";
 
-export default async function MainProjectsSection({
+export default async function ProjectsMainSection({
   lang,
   searchParams,
 }: {

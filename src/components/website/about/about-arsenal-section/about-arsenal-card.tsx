@@ -17,7 +17,7 @@ interface SkillCategory {
   skills: Skill[];
 }
 
-export default function ArsenalCard({
+export default function AboutArsenalCard({
   category,
   index,
 }: {

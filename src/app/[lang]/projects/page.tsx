@@ -1,6 +1,6 @@
-import CtaSection from "@/components/website/projects/cta-section/cta-section";
-import ProjectsHeroSection from "@/components/website/projects/hero-section/projects-hero-section";
-import MainProjectsSection from "@/components/website/projects/main-projects-section/main-projects-section";
+import ProjectsCtaSection from "@/components/website/projects/projects-cta-section/projects-cta-section";
+import ProjectsHeroSection from "@/components/website/projects/projects-hero-section/projects-hero-section";
+import ProjectsMainSection from "@/components/website/projects/projects-main-section/projects-main-section";
 import { Lang } from "@/utils/translations/dictionary-utils";
 
 interface Props {
@@ -10,12 +10,12 @@ interface Props {
 
 export default async function ProjectsPage({ params, searchParams }: Props) {
   const lang = (await params).lang;
-  const s = await searchParams
+  const searchP = await searchParams
   return (
     <div className="bg-primary/10">
       <ProjectsHeroSection lang={lang} />
-      <MainProjectsSection lang={lang} searchParams={s} />
-      <CtaSection lang={lang} />
+      <ProjectsMainSection lang={lang} searchParams={searchP} />
+      <ProjectsCtaSection lang={lang} />
     </div>
   );
 }

@@ -16,28 +16,24 @@ export default async function ProjectsHeroSection({ lang }: { lang: Lang }) {
     {
       name: "Next.js",
       url: "https://nextjs.org",
-      color: "hover:border-gray-400/50 hover:text-gray-100",
     },
     {
       name: "TypeScript",
       url: "https://typescriptlang.org",
-      color: "hover:border-blue-600/50 hover:text-blue-300",
     },
     {
       name: "Tailwind CSS",
       url: "https://tailwindcss.com",
-      color: "hover:border-cyan-400/50 hover:text-cyan-300",
     },
     {
       name: "Node.js",
       url: "https://nodejs.org",
-      color: "hover:border-green-500/50 hover:text-green-400",
     },
   ];
 
   return (
     <section className="relative backdrop-blur-2xl w-full z-20 bg-primary/10 min-h-screen flex items-center">
-      <HeroDecoration/>
+      <HeroDecoration />
 
       <div className="container max-w-6xl mx-auto h-full">
         <div className="relative z-50 flex flex-col justify-center h-full items-center gap-5 px-4 md:px-6">
@@ -76,7 +72,7 @@ export default async function ProjectsHeroSection({ lang }: { lang: Lang }) {
                     href={tech.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`group relative px-4 py-2 rounded-full bg-background/30 border border-foreground/10 text-sm hover:bg-foreground/5 transition-all duration-300 hover:scale-105 cursor-pointer backdrop-blur-sm flex items-center gap-2 ${tech.color}`}
+                    className={`group relative px-4 py-2 rounded-full bg-background/30 border border-foreground/10 text-sm hover:bg-foreground/5 transition-all duration-300 hover:scale-105 cursor-pointer backdrop-blur-sm flex items-center gap-2`}
                     style={{ animationDelay: `${0.7 + i * 0.1}s` }}
                   >
                     <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

@@ -3,11 +3,13 @@ import { getDictionary, Lang } from "@/utils/translations/dictionary-utils";
 import { Brain, Lightbulb, TrendingUp } from "lucide-react";
 import AboutDecoration from "../../home/home-about-section/home-about-decoration";
 import ShinyText from "@/components/custom/motion/text-shine";
-import PhilosophyCard, { PhilosophyCardProps } from "./philosophy-card";
+import AboutPhilosophyCard, {
+  AboutPhilosophyCardProps,
+} from "./about-philosophy-card";
 
-export default async function PhilosophySection({ lang }: { lang: Lang }) {
+export default async function AboutPhilosophySection({ lang }: { lang: Lang }) {
   const dict = (await getDictionary(lang)).aboutPage.philosophy;
-  const approachData: PhilosophyCardProps[] = [
+  const approachData: AboutPhilosophyCardProps[] = [
     {
       title: dict.cards.problemFirst.title,
       description: dict.cards.problemFirst.description,
@@ -28,7 +30,7 @@ export default async function PhilosophySection({ lang }: { lang: Lang }) {
     },
   ];
   return (
-    <section className="pb-10 relative backdrop-blur-2xl bg-primary/10 overflow-hidden ">
+    <section className="py-24 relative backdrop-blur-2xl bg-primary/10 overflow-hidden ">
       <AboutDecoration />
 
       <div className="container max-w-6xl mx-auto px-4 relative z-10">
@@ -61,7 +63,7 @@ export default async function PhilosophySection({ lang }: { lang: Lang }) {
             <div className="max-w-4xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {approachData.map((item) => (
-                  <PhilosophyCard key={item.title} {...item} />
+                  <AboutPhilosophyCard key={item.title} {...item} />
                 ))}
               </div>
             </div>

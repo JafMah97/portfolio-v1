@@ -2,10 +2,10 @@ import { getDictionary, Lang } from "@/utils/translations/dictionary-utils";
 import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 import ShinyText from "@/components/custom/motion/text-shine";
 import { Award, Rocket, ToolCase } from "lucide-react";
-import AboutHeroCard from "./hero-card";
+import AboutHeroCard from "./about-hero-card";
 import HeroDecoration from "@/components/custom/layout/hero-decoration";
 
-export default async function AboutHero({ lang }: { lang: Lang }) {
+export default async function AboutHeroSection({ lang }: { lang: Lang }) {
   const dict = (await getDictionary(lang)).aboutPage.hero;
   const CardsData = [
     {

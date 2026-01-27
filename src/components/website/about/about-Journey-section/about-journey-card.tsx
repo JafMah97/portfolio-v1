@@ -9,7 +9,7 @@ export interface Experience {
   icon: React.ReactNode;
 }
 
-export default function JourneyCard({
+export default function AboutJourneyCard({
   exp,
   idx,
 }: {

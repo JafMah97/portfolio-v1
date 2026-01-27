@@ -2,7 +2,7 @@ import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 import { getDictionary, Lang } from "@/utils/translations/dictionary-utils";
 import { FaGraduationCap } from "react-icons/fa";
 
-export default async function AcademicCard({lang}:{lang:Lang}) {
+export default async function AboutAcademicCard({lang}:{lang:Lang}) {
   const dict = (await getDictionary(lang)).aboutPage.academic
   const skills= dict.skills
   return (

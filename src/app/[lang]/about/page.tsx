@@ -1,9 +1,9 @@
-import AcadimicSection from "@/components/website/about/academic-section/acadimic-section";
-import ArsenalSection from "@/components/website/about/arsenal-section/arsenal-section";
-import AboutHero from "@/components/website/about/hero-section/about-hero-section";
-import HashScroll from "@/components/website/about/hero-section/hash-scroll";
-import JourneySection from "@/components/website/about/Journey-section/journey-section";
-import PhilosophySection from "@/components/website/about/philosophy-section/philosophy-section";
+import HashScroll from "@/components/custom/layout/hash-scroll";
+import AboutHeroSection from "@/components/website/about/about-hero-section/about-hero-section";
+import AboutPhilosophySection from "@/components/website/about/about-philosophy-section/about-philosophy-section";
+import AboutArsenalSection from "@/components/website/about/about-arsenal-section/about-arsenal-section";
+import AboutJourneySection from "@/components/website/about/about-Journey-section/about-journey-section";
+import AboutAcadimicSection from "@/components/website/about/about-academic-section/about-academic-section";
 import { Lang } from "@/utils/translations/dictionary-utils";
 import { Suspense } from "react";
 
@@ -19,11 +19,11 @@ export default async function AboutPage({ params }: Props) {
       <Suspense>
         <HashScroll />
       </Suspense>
-      <AboutHero lang={lang} />
-      <PhilosophySection lang={lang} />
-      <ArsenalSection lang={lang} />
-      <JourneySection lang={lang} />
-      <AcadimicSection lang={lang} />
+      <AboutHeroSection lang={lang} />
+      <AboutPhilosophySection lang={lang} />
+      <AboutArsenalSection lang={lang} />
+      <AboutJourneySection lang={lang} />
+      <AboutAcadimicSection lang={lang} />
     </div>
   );
 }
