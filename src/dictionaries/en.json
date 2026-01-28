@@ -18,8 +18,8 @@
     "theme": "Toggle Theme",
     "setting": "Setting"
   },
-  "loadingPage":{
-    "loading":"loading"
+  "loadingPage": {
+    "loading": "loading"
   },
   "notFoundPage": {
     "title": "Page Not Found",
@@ -284,7 +284,25 @@
   },
   "projectPage": {
     "hero": {
-      "links": {}
+      "links": {
+        "demo": "Demo",
+        "viewCode": "View Code",
+        "backendRepo": "Backend Repo"
+      }
+    },
+    "overview": "Overview",
+    "keyFeatures": "Key Features",
+    "challengesFaced": "Challenges Faced",
+    "solutionsImplemented": "Solutions Implemented",
+    "keyLearnings": "Key Learnings",
+    "architecture":"Architecture",
+    "futureImprovements":"Future Improvements",
+    "limitations":"Limitations",
+    "techStackTitles": {
+      "main": "Tech Stack",
+      "front": "Frontend",
+      "back": "Backend",
+      "deployment": "Deployment"
     }
   },
   "projects": {
@@ -330,11 +348,20 @@
           "Database: Railway PostgreSQL"
         ]
       },
-      "architecture": {
-        "frontend": "Next.js App Router with server components, client components where needed, React Query for data fetching and caching, optimistic updates for fast UI, and a modular UI system built with shadcn/ui and TailwindCSS. Axios is used as the main HTTP client with a typed API layer and unified error handling.",
-        "backend": "Fastify REST API with a clean modular route structure, Prisma ORM for database access, Zod for schema validation, and JWT-based authentication. Routes are protected using authorization middleware. All backend errors follow a normalized shape to simplify frontend error handling.",
-        "database": "PostgreSQL schema designed with Prisma, including users, posts, comments, likes, and session tokens."
-      },
+      "architecture": [
+        {
+          "label": "Frontend",
+          "value": "Next.js App Router with server components, client components where needed, React Query for data fetching and caching, optimistic updates for fast UI, and a modular UI system built with shadcn/ui and TailwindCSS. Axios is used as the main HTTP client with a typed API layer and unified error handling."
+        },
+        {
+          "label": "Backend",
+          "value": "Fastify REST API with a clean modular route structure, Prisma ORM for database access, Zod for schema validation, and JWT-based authentication. Routes are protected using authorization middleware. All backend errors follow a normalized shape to simplify frontend error handling."
+        },
+        {
+          "label": "Database",
+          "value": "PostgreSQL schema designed with Prisma, including users, posts, comments, likes, and other."
+        }
+      ],
       "challenges": [
         "Handling HTTP-only cookies differently in development vs production",
         "Designing a complete authentication system without paid email services",
@@ -368,11 +395,11 @@
         "Some auth UI screens are implemented but disabled in production"
       ],
       "futureImprovements": [
-        "Enable email flows once a custom domain is connected",
-        "Add real-time updates using WebSockets",
-        "Add notifications and activity feed",
-        "Improve caching strategies",
-        "Add user profiles and media uploads"
+        "تفعيل عمليات البريد الإلكتروني بعد ربط نطاق مخصص",
+        "إضافة تحديثات لحظية باستخدام WebSockets",
+        "إضافة الإشعارات وخلاصة النشاط",
+        "تحسين استراتيجيات التخزين المؤقت",
+        "إضافة ملفات تعريف المستخدمين ورفع الوسائط"
       ]
     },
     "konektaBackend": {
@@ -408,11 +435,20 @@
           "Vercel (frontend integration)"
         ]
       },
-      "architecture": {
-        "apiDesign": "Modular Fastify route structure with controllers, services, and validation layers. Each endpoint follows a predictable pattern: validate → authorize → execute → respond. Errors follow a normalized shape to simplify frontend handling.",
-        "database": "Prisma schema includes users, posts, comments, likes, tokens, and sessions. Relations are designed to support scalable social interactions and efficient querying.",
-        "auth": "JWT-based authentication with refresh tokens, secure cookie handling, and environment-based cookie configuration for dev vs prod."
-      },
+      "architecture": [
+        {
+          "label": "Api Design",
+          "value": "Modular Fastify route structure with controllers, services, and validation layers. Each endpoint follows a predictable pattern: validate → authorize → execute → respond. Errors follow a normalized shape to simplify frontend handling."
+        },
+        {
+          "label": "Database",
+          "value": "Prisma schema includes users, posts, comments, likes, tokens, and sessions. Relations are designed to support scalable social interactions and efficient querying."
+        },
+        {
+          "label": "Auth",
+          "value": "JWT-based authentication with refresh tokens, secure cookie handling, and environment-based cookie configuration for dev vs prod."
+        }
+      ],
       "challenges": [
         "Understanding how backend routing, validation, and controllers work together",
         "Learning Prisma schema design and relational modeling",
@@ -484,11 +520,20 @@
         "tools": ["SEO testing tools", "Structured data validators", "Vercel"],
         "deployment": ["Vercel (production hosting)"]
       },
-      "architecture": {
-        "rendering": "The project is fully server-side rendered, leveraging Next.js App Router for dynamic routing, metadata generation, and SEO optimization. Server components were used where possible to improve performance and reduce bundle size.",
-        "localization": "Full bilingual support (Arabic and English) with a clean dictionary structure and dynamic routing based on language. All UI components were built with RTL/LTR awareness.",
-        "apiIntegration": "Connected to a real backend API built by an experienced backend engineer. Implemented data fetching, caching strategies, and error handling patterns suitable for production."
-      },
+      "architecture": [
+        {
+          "label": "Rendering",
+          "value": "The project is fully server-side rendered, leveraging Next.js App Router for dynamic routing, metadata generation, and SEO optimization. Server components were used where possible to improve performance and reduce bundle size."
+        },
+        {
+          "label": "Localization",
+          "value": "Full bilingual support (Arabic and English) with a clean dictionary structure and dynamic routing based on language. All UI components were built with RTL/LTR awareness."
+        },
+        {
+          "label": "API Integration",
+          "value": "Connected to a real backend API built by an experienced backend engineer. Implemented data fetching, caching strategies, and error handling patterns suitable for production."
+        }
+      ],
       "challenges": [
         "Understanding server-side rendering and how it differs from client-side rendering",
         "Learning SEO fundamentals and applying structured data schemas",
@@ -554,11 +599,20 @@
         "tools": ["Vercel", "ESLint", "Prettier"],
         "deployment": ["Vercel (production hosting)"]
       },
-      "architecture": {
-        "rendering": "Built using Next.js App Router with a mix of server and client components. Pages are structured for clarity, scalability, and SEO optimization. Animations are handled with Framer Motion for smooth, modern transitions.",
-        "localization": "Full bilingual support (Arabic and English) with dynamic routing, dictionary-based translations, and RTL/LTR awareness across all components.",
-        "theming": "Theme switching implemented using next-themes with persistent user preference and full dark/light UI support."
-      },
+      "architecture": [
+        {
+          "label": "Rendering",
+          "value": "Built using Next.js App Router with a mix of server and client components. Pages are structured for clarity, scalability, and SEO optimization. Animations are handled with Framer Motion for smooth, modern transitions."
+        },
+        {
+          "label": "Localization",
+          "value": "Full bilingual support (Arabic and English) with dynamic routing, dictionary-based translations, and RTL/LTR awareness across all components."
+        },
+        {
+          "label": "Theming",
+          "value": "Theme switching implemented using next-themes with persistent user preference and full dark/light UI support."
+        }
+      ],
       "challenges": [
         "Designing a clean and scalable architecture for multiple pages",
         "Ensuring full localization with RTL support",
@@ -608,10 +662,16 @@
         "tools": ["ESLint", "Prettier"],
         "deployment": ["GitHub Pages"]
       },
-      "architecture": {
-        "structure": "Simple React component hierarchy with App component managing state and child components for UI rendering.",
-        "styling": "Material UI components and styling system for consistent UI design."
-      },
+      "architecture": [
+        {
+          "label": "Structure",
+          "value": "Simple React component hierarchy with App component managing state and child components for UI rendering."
+        },
+        {
+          "label": "Styling",
+          "value": "Material UI components and styling system for consistent UI design."
+        }
+      ],
       "challenges": [
         "Understanding how React components work together",
         "Learning state and props for the first time",
@@ -651,10 +711,16 @@
         "tools": ["GitHub Pages"],
         "deployment": ["GitHub Pages (static hosting)"]
       },
-      "architecture": {
-        "htmlStructure": "Semantic HTML5 elements for clean document structure.",
-        "cssLayout": "CSS Flexbox for layout and basic responsive design principles."
-      },
+      "architecture": [
+        {
+          "label": "HTML Structure",
+          "value": "Semantic HTML5 elements for clean document structure."
+        },
+        {
+          "label": "CSS Layout",
+          "value": "CSS Flexbox for layout and basic responsive design principles."
+        }
+      ],
       "challenges": [
         "Learning how to structure HTML for the first time",
         "Understanding CSS layout and spacing",

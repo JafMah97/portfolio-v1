@@ -1,6 +1,6 @@
 import { getDictionary, Lang } from "@/utils/translations/dictionary-utils";
 
-type TechStack = {
+export type TechStack = {
   frontend?: string[];
   backend?: string[];
   tools?: string[];
@@ -8,8 +8,11 @@ type TechStack = {
   [key: string]: string[] | undefined;
 };
 
-type Architecture = {
-  [key: string]: string;
+export type Architecture = ArchTerm[];
+
+type ArchTerm = {
+  label: string;
+  value: string;
 };
 
 type Links = {
@@ -60,11 +63,7 @@ export async function projects(lang: Lang) {
         backend: konektaSocial.techStack.backend,
         deployment: konektaSocial.techStack.deployment,
       },
-      architecture: {
-        frontend: konektaSocial.architecture.frontend,
-        backend: konektaSocial.architecture.backend,
-        database: konektaSocial.architecture.database,
-      },
+      architecture: konektaSocial.architecture,
       photos: [
         "/images/projects/konekta-social/home.png",
         "/images/projects/konekta-social/feeds.png",
@@ -94,11 +93,7 @@ export async function projects(lang: Lang) {
         tools: konektaBackend.techStack.tools,
         deployment: konektaBackend.techStack.deployment,
       },
-      architecture: {
-        apiDesign: konektaBackend.architecture.apiDesign,
-        database: konektaBackend.architecture.database,
-        auth: konektaBackend.architecture.auth,
-      },
+      architecture: konektaBackend.architecture,
       photos: [
         "/images/projects/konekta-backend/overview.png",
         "/images/projects/konekta-backend/logs.png",
@@ -126,11 +121,7 @@ export async function projects(lang: Lang) {
         tools: theDeal.techStack.tools,
         deployment: theDeal.techStack.deployment,
       },
-      architecture: {
-        rendering: theDeal.architecture.rendering,
-        localization: theDeal.architecture.localization,
-        apiIntegration: theDeal.architecture.apiIntegration,
-      },
+      architecture: theDeal.architecture,
       photos: [
         "/images/projects/the-deal/home.png",
         "/images/projects/the-deal/projects.png",
@@ -181,10 +172,7 @@ export async function projects(lang: Lang) {
         tools: reactTodo.techStack.tools,
         deployment: reactTodo.techStack.deployment,
       },
-      architecture: {
-        structure: reactTodo.architecture.structure,
-        styling: reactTodo.architecture.styling,
-      },
+      architecture: reactTodo.architecture,
       photos: [
         "/images/projects/react-todo/all.png",
         "/images/projects/react-todo/done.png",
@@ -212,10 +200,7 @@ export async function projects(lang: Lang) {
         tools: hairDayWebsite.techStack.tools,
         deployment: hairDayWebsite.techStack.deployment,
       },
-      architecture: {
-        htmlStructure: hairDayWebsite.architecture.htmlStructure,
-        cssLayout: hairDayWebsite.architecture.cssLayout,
-      },
+      architecture: hairDayWebsite.architecture,
       photos: [
         "/images/projects/hairday-website/home.png",
         "/images/projects/hairday-website/res.png",

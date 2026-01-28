@@ -60,7 +60,7 @@ export default async function AboutHeroSection({ lang }: { lang: Lang }) {
             delay={0.4}
             className="w-full max-w-4xl mx-auto"
           >
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 px-2">
+            <div className="flex flex-wrap justify-center gap-3">
               {CardsData.map((stat, idx) => (
                 <AboutHeroCard key={idx} stat={stat} index={idx} />
               ))}

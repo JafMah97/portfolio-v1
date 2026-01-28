@@ -75,7 +75,7 @@ export default async function ProjectsHeroSection({ lang }: { lang: Lang }) {
                     className={`group relative px-4 py-2 rounded-full bg-background/30 border border-foreground/10 text-sm hover:bg-foreground/5 transition-all duration-300 hover:scale-105 cursor-pointer backdrop-blur-sm flex items-center gap-2`}
                     style={{ animationDelay: `${0.7 + i * 0.1}s` }}
                   >
-                    <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <ExternalLink className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-4 h-4" />
 
                     <span>{tech.name}</span>
                     <div className="w-3 h-3"></div>

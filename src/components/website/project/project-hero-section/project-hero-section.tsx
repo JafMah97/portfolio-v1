@@ -3,14 +3,9 @@ import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 import ShinyText from "@/components/custom/motion/text-shine";
 import { Project } from "@/constants/projects-data";
 import { getDictionary, Lang } from "@/utils/translations/dictionary-utils";
-import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
-import {
-  FiGithub,
-  FiExternalLink,
-  FiServer,
-  FiChevronRight,
-} from "react-icons/fi";
+
 
 interface ProjectHeroSectionProps {
   lang: Lang;
@@ -20,26 +15,26 @@ export default async function ProjectHeroSection({
   lang,
   project,
 }: ProjectHeroSectionProps) {
-  const dict = await getDictionary(lang);
+  const dict = (await getDictionary(lang)).projectPage.hero;
   return (
     <section className="relative overflow-hidden py-20">
       <HeroDecoration />
-      <div className="container max-w-6xl mx-auto px-4 relative min-h-[60vh]">
+      <div className="container max-w-6xl mx-auto px-4 relative py-24">
         <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-10 h-full">
-          <div className="h-full flex flex-col justify-center items-center">
+          <div className="h-full flex flex-col justify-center items-center gap-5">
             {/* title */}
             <MotionWrapper
               as="h1"
               fadeUp
               delay={0.1}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-center md:text-start"
+              className="text-5xl md:text-6xl font-bold mb-6 text-center md:text-start"
             >
               <ShinyText text={project.title} />
             </MotionWrapper>
 
             {/* Subtitle */}
-            <MotionWrapper fadeUp delay={0.2} className="mb-8 h-10 md:h-20">
-              <p className="text-xl text-center">
+            <MotionWrapper fadeUp delay={0.2}>
+              <p className="max-w-3xl mx-auto text-center text-[16px] md:text-lg mb-5 md:mb-16 md:leading-relaxed">
                 {project.description}
               </p>
             </MotionWrapper>
@@ -56,11 +51,12 @@ export default async function ProjectHeroSection({
                   href={project.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all hover:scale-105 shadow-lg"
+                  className={`group relative px-4 py-2 rounded-full bg-forground/30 border border-foreground/10 text-sm hover:bg-foreground/5 transition-all duration-300 hover:scale-105 cursor-pointer backdrop-blur-sm flex items-center gap-2 `}
                 >
-                  <FiGithub className="text-lg" />
-                  <span>View Code</span>
-                  <FiChevronRight className="group-hover:translate-x-1 transition-transform" />
+                  <ExternalLink className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-4 h-4" />
+
+                  <span className="text-center"> {dict.links.viewCode}</span>
+                  <div className="w-3 h-3"></div>
                 </Link>
               )}
 
@@ -70,11 +66,12 @@ export default async function ProjectHeroSection({
                   href={project.links.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:from-primary/90 hover:to-primary/70 transition-all hover:scale-105 shadow-lg"
+                  className={`group relative px-4 py-2 rounded-full bg-forground/30 border border-foreground/10 text-sm hover:bg-foreground/5 transition-all duration-300 hover:scale-105 cursor-pointer backdrop-blur-sm flex items-center gap-2 `}
                 >
-                  <FiExternalLink className="text-lg" />
-                  <span>Live Demo</span>
-                  <FiChevronRight className="group-hover:translate-x-1 transition-transform" />
+                  <ExternalLink className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-4 h-4" />
+
+                  <span className="text-center">{dict.links.demo}</span>
+                  <div className="w-3 h-3"></div>
                 </Link>
               )}
 
@@ -84,17 +81,15 @@ export default async function ProjectHeroSection({
                   href={project.links.backendGithub}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-2 px-6 py-3 bg-foreground/70 dark:bg-foreground/30 text-white rounded-lg  hover:scale-105 shadow-lg"
+                  className={`group relative px-4 py-2 rounded-full bg-forground/30 border border-foreground/10 text-sm hover:bg-foreground/5 transition-all duration-300 hover:scale-105 cursor-pointer backdrop-blur-sm flex items-center gap-2 `}
                 >
-                  <FiServer className="text-lg" />
-                  <span>Backend Repo</span>
-                  <FiChevronRight className="group-hover:translate-x-1 transition-transform" />
+                  <ExternalLink className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-4 h-4" />
+
+                  <span className="text-center">{dict.links.backendRepo}</span>
+                  <div className="w-3 h-3"></div>
                 </Link>
               )}
             </MotionWrapper>
-          </div>
-          <div className="w-full h-full">
-            <Image className="object-cover w-full h-full rounded-2xl" src={project.photos[0]} alt={project.title} width={1000} height={1000} />
           </div>
         </div>
       </div>

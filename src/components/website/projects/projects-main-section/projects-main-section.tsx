@@ -42,6 +42,7 @@ export default async function ProjectsMainSection({
           {filteredProjects.map((p, index) => {
             return (
               <ProjectCard key={index} index={index} project={p} lang={lang} />
+           
             );
           })}
         </ProjectsWrapper>

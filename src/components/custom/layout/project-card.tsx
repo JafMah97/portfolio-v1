@@ -34,7 +34,6 @@ export default async function ProjectCard({
       id={project.cardId}
       fadeUp
       delay={index * 0.1}
-      whileHover={{ y: -8 }}
       transition={{ type: "spring", stiffness: 300, damping: 25 }}
       className="group relative h-full"
     >
