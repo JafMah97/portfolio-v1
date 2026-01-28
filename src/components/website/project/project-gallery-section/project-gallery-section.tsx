@@ -39,7 +39,7 @@ export default function ProjectgallerySection({
                     <button
                       key={index}
                       onClick={() => setActiveImage(index)}
-                      className={`relative shrink-0 w-24 h-24 rounded-lg overflow-hidden transition-all ${
+                      className={`group relative shrink-0 w-24 h-24 rounded-lg overflow-hidden transition-all cursor-pointer ${
                         activeImage === index
                           ? "ring-2 ring-primary scale-105"
                           : "opacity-60 hover:opacity-100"
@@ -51,6 +51,9 @@ export default function ProjectgallerySection({
                         fill
                         className="object-cover"
                       />
+
+                      {/* Hover overlay */}
+                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </button>
                   ))}
                 </div>

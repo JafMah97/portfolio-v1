@@ -24,13 +24,15 @@ export default async function ProjectMainSection({
     <section className="py-10">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="my-24">
-          <ProjectgallerySection
-            allImages={project.photos}
-            title={project.title}
-          />
+          {/*gallery*/}
+          {project.cardId !== "konekta-backend" && (
+            <ProjectgallerySection
+              allImages={project.photos}
+              title={project.title}
+            />
+          )}
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/*gallery*/}
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-12">
             <ProjectOverview

@@ -1,7 +1,6 @@
 // src/app/[lang]/projects/[id]/page.tsx
 
 import { Lang } from "@/utils/translations/dictionary-utils";
-import MotionWrapper from "@/components/custom/motion/motion-wrapper";
 import { projects } from "@/constants/projects-data";
 import ProjectHeroSection from "@/components/website/project/project-hero-section/project-hero-section";
 import ProjectMainSection from "@/components/website/project/project-main-section/project-main-section";

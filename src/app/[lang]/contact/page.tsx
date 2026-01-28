@@ -209,7 +209,7 @@
 export default function page() {
   return (
     <div className="bg-primary/10">
-      <div className="container max-w-7xl mx-auto flex justify-center items-center min-h-[80vh]">
+      <div className="container max-w-7xl mx-auto flex justify-center items-center min-h-[81vh]">
         <h1 className="text-4xl md:text-6xl text-center text-foreground font-bold">
           Comming Soon
         </h1>
