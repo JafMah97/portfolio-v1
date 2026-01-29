@@ -241,6 +241,6 @@ export default function Aurora({
 
 export const AuroraSer = () =>{
   return (
-    <Aurora speed={0.5}/>
+    <Aurora speed={0.5} />
   )
 }

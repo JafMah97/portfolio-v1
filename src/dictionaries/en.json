@@ -295,14 +295,50 @@
     "challengesFaced": "Challenges Faced",
     "solutionsImplemented": "Solutions Implemented",
     "keyLearnings": "Key Learnings",
-    "architecture":"Architecture",
-    "futureImprovements":"Future Improvements",
-    "limitations":"Limitations",
+    "architecture": "Architecture",
+    "futureImprovements": "Future Improvements",
+    "limitations": "Limitations",
     "techStackTitles": {
       "main": "Tech Stack",
       "front": "Frontend",
       "back": "Backend",
       "deployment": "Deployment"
+    }
+  },
+  "contactPage": {
+    "heroSection": {
+      "title": "Contact Me",
+      "subtitle": "I’m always open to new projects, collaborations, or just a friendly chat. Whether you have a question, a project idea, or just want to say hello — feel free to reach out.",
+      "links": {
+        "whatsapp": "WhatsApp",
+        "linkedin": "LinkedIn",
+        "email": "Email"
+      }
+    },
+    "formSection": {
+      "sectionBg": "Get in Touch",
+      "sectionDescription": "Have questions or want to work together? Send me a message and I'll get back to you soon.",
+      "formTitle": "Contact Form",
+      "formDescription": "Fill out the form below and I'll respond within 24 hours.",
+      "nameLabel": "Your Name",
+      "namePlaceholder": "John Doe",
+      "nameDescription": "Please enter your full name.",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "example@email.com",
+      "emailDescription": "I’ll use this email to reply back to you.",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Write your message here...",
+      "messageDescription": "Tell me how I can help you.",
+      "submit": "Send Message",
+      "validation": {
+        "invalidName": "Please enter a valid name.",
+        "invalidEmail": "Please enter a valid email address.",
+        "invalidMessage": "Your message must be at least 10 characters long."
+      },
+      "feedback": {
+        "success": "Your message has been sent successfully!",
+        "error": "Something went wrong. Please try again."
+      }
     }
   },
   "projects": {
